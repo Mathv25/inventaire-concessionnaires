@@ -226,6 +226,14 @@ def is_parked_or_closed(text):
 
 # ── Recherche d'URL ────────────────────────────────────────────────────────────
 
+# Mots trop génériques pour identifier un dealer spécifique
+_GENERIC_WORDS = {
+    "auto","autos","automobile","automobiles","groupe","group","direct",
+    "selection","inc","ltee","enr","le","la","les","de","du","des","et",
+    "the","concessionnaire","dealer","2000","2006","2010","2015","canada",
+    "quebec","qc","saint","sainte","ste","st","nord","sud","est","ouest",
+}
+
 def url_relevance_score(url, dealer_name, city):
     score = 0
     url_l = url.lower()
@@ -239,13 +247,26 @@ def url_relevance_score(url, dealer_name, city):
     city_norm    = norm(city)
     dealer_words = [w for w in norm(dealer_name).split() if len(w) > 2]
     city_words   = [w for w in city_norm.split() if len(w) > 2]
-    unique_dealer = [w for w in dealer_words if w not in city_words]
+
+    # Mots UNIQUES au dealer (ni ville, ni génériques) — doivent apparaître dans le domaine
+    unique_words = [w for w in dealer_words
+                    if w not in city_words and w not in _GENERIC_WORDS]
 
     brand_found = any(brand in domain for brand in AUTO_BRANDS)
     if brand_found: score += 4
 
-    for w in unique_dealer:
-        if w in domain: score += 3
+    if unique_words:
+        matches = sum(1 for w in unique_words if w in domain)
+        if matches == 0:
+            # Aucun mot distinctif du nom dans le domaine → probablement pas le bon dealer
+            return -5
+        score += matches * 3
+    else:
+        # Nom 100% générique — on accepte si le domaine contient au moins un mot du nom
+        generic_match = sum(1 for w in dealer_words if w in domain)
+        if generic_match == 0:
+            return -5
+        score += generic_match
 
     if any(w in domain for w in city_words): score += 1
     for kw in ["auto","autos","cars","vehicule","concessionnaire","dealer","groupe","moto"]:
@@ -394,17 +415,18 @@ def find_used_link(html, base_url):
 
 
 def scrape_static(url):
+    """Retourne (count, source_label, page_url)."""
     try:
         r = requests.get(url, headers=HEADERS_HTTP, timeout=15,
                          allow_redirects=True, verify=False)
         if r.status_code != 200:
-            return None, f"HTTP {r.status_code}"
+            return None, f"HTTP {r.status_code}", url
 
         soup = BeautifulSoup(r.text, "html.parser")
         for tag in soup(["script","style","noscript"]): tag.decompose()
         text = soup.get_text(" \n", strip=True)
         count = extract_count(text)
-        if count: return count, "website_static"
+        if count: return count, "website_static", url
 
         used_link = find_used_link(r.text, url)
         if used_link and used_link != url:
@@ -416,7 +438,7 @@ def scrape_static(url):
                     soup2 = BeautifulSoup(r2.text, "html.parser")
                     for t in soup2(["script","style","noscript"]): t.decompose()
                     count = extract_count(soup2.get_text(" \n", strip=True))
-                    if count: return count, "website_static_used_link"
+                    if count: return count, "website_static_used_link", used_link
             except Exception:
                 pass
 
@@ -424,26 +446,28 @@ def scrape_static(url):
         for path in USED_PATHS:
             try:
                 quick()
-                r2 = requests.get(base + path, headers=HEADERS_HTTP, timeout=10,
+                probe_url = base + path
+                r2 = requests.get(probe_url, headers=HEADERS_HTTP, timeout=10,
                                   allow_redirects=True, verify=False)
                 if r2.status_code == 200:
                     soup2 = BeautifulSoup(r2.text, "html.parser")
                     for t in soup2(["script","style","noscript"]): t.decompose()
                     text2 = soup2.get_text(" \n", strip=True)
                     count = extract_count(text2)
-                    if count: return count, f"static{path}"
+                    if count: return count, f"static{path}", probe_url
                     n = count_vehicle_cards(r2.text)
-                    if n: return n, f"static_cards{path}"
+                    if n: return n, f"static_cards{path}", probe_url
             except Exception:
                 pass
 
-        return None, "not_found_static"
+        return None, "not_found_static", url
     except Exception as e:
-        return None, str(e)[:60]
+        return None, str(e)[:60], url
 
 
 def scrape_playwright(url):
-    if not HAS_PLAYWRIGHT: return None, "playwright_unavailable"
+    """Retourne (count, source_label, page_url)."""
+    if not HAS_PLAYWRIGHT: return None, "playwright_unavailable", url
     try:
         with sync_playwright() as pw:
             browser = pw.chromium.launch(
@@ -475,6 +499,8 @@ def scrape_playwright(url):
                 page.goto(used_url, wait_until="domcontentloaded", timeout=25000)
             time.sleep(3.0)
 
+            final_url = page.url  # URL réelle après navigation
+
             if used_url == url:
                 for selector in [
                     'a:text-matches("usagé", "i")',
@@ -494,6 +520,7 @@ def scrape_playwright(url):
                                 except Exception:
                                     page.goto(target, wait_until="domcontentloaded", timeout=20000)
                                 time.sleep(2.5)
+                                final_url = page.url
                                 break
                     except Exception:
                         pass
@@ -503,14 +530,14 @@ def scrape_playwright(url):
             browser.close()
 
         count = extract_count(text)
-        if count: return count, "website_js"
+        if count: return count, "website_js", final_url
 
         n = count_vehicle_cards(html)
-        if n: return n, "website_js_cards"
+        if n: return n, "website_js_cards", final_url
 
-        return None, "not_found_js"
+        return None, "not_found_js", url
     except Exception as e:
-        return None, f"pw_err:{str(e)[:40]}"
+        return None, f"pw_err:{str(e)[:40]}", url
 
 
 # ── autousagee.ca fallback ─────────────────────────────────────────────────────
@@ -654,17 +681,18 @@ def process(dealer, output_csv):
     if url:
         pause()
         print("    Scraping statique...")
-        count, src = scrape_static(url)
+        count, src, page_url = scrape_static(url)
 
         if count is None:
             print(f"    Playwright ({src})...")
             pause()
-            count, src = scrape_playwright(url)
+            count, src, page_url = scrape_playwright(url)
 
         if count is not None:
-            print(f"    ✓ {count} véhicules ({src})")
+            print(f"    ✓ {count} véhicules ({src}) → {page_url}")
             row["Inventaire_Scraped"] = count
             row["Source"] = src
+            row["URL_trouvee"] = page_url  # URL de la page occasion, pas juste l'accueil
             return row
 
         row["Notes"] = f"site:{src}"
