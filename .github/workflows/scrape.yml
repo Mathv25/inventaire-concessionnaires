@@ -1,0 +1,67 @@
+name: Scraper Inventaire Concessionnaires
+
+on:
+  push:
+    paths:
+      - 'input/dealers.csv'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode (run / retry)'
+        required: false
+        default: 'run'
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer dépendances Python
+        run: pip install -r requirements.txt
+
+      - name: Installer Playwright (Chromium)
+        run: playwright install chromium --with-deps
+
+      - name: Vérifier que le fichier input existe
+        run: |
+          if [ ! -f input/dealers.csv ]; then
+            echo "❌ Fichier input/dealers.csv introuvable."
+            exit 1
+          fi
+          echo "✅ $(wc -l < input/dealers.csv) lignes dans input/dealers.csv"
+
+      - name: Lancer le scraper
+        run: |
+          MODE="${{ github.event.inputs.mode || 'run' }}"
+          echo "Mode: $MODE"
+          python scraper.py input/dealers.csv output/results.csv $MODE
+
+      - name: Résumé des résultats
+        if: always()
+        run: |
+          if [ -f output/results.csv ]; then
+            TOTAL=$(tail -n +2 output/results.csv | wc -l)
+            TROUVES=$(tail -n +2 output/results.csv | awk -F',' '$7 != "" && $7 != "0"' | wc -l)
+            FERMES=$(tail -n +2 output/results.csv | awk -F',' '$8 == "FERMÉ"' | wc -l)
+            NON=$(tail -n +2 output/results.csv | awk -F',' '$8 == "non_trouve"' | wc -l)
+            echo "📊 Résultats: $TOTAL total | $TROUVES trouvés | $FERMES fermés | $NON non trouvés"
+          fi
+
+      - name: Commit résultats
+        run: |
+          git config --global user.name "Scraper Bot"
+          git config --global user.email "bot@inventaire.local"
+          git add output/results.csv
+          git diff --staged --quiet || git commit -m "Résultats scrape $(date +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase -X theirs origin main || true
+          git push || true

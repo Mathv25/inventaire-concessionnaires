@@ -1,0 +1,6 @@
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+retry_*.log
+retry_log.txt
