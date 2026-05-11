@@ -1,0 +1,554 @@
+Concessionnaire,Ville,Rep,Type,Inventaire_CRM,URL_trouvee,Inventaire_Scraped,Source,Date_Scrape,Notes
+Lévis Subaru,Levis,Maxime Beland,Former Customer,77,https://www.levissubaru.com,63,website_static,2026-05-06,
+Thibault Chevrolet Cadillac Buick GMC,Rouyn-noranda,Maxime Beland,Former Customer,51,https://www.thibaultchevrolet.com,56,website_static_used_link,2026-05-06,
+Gatineau Honda,Gatineau,Isabelle Ricard,Former Customer,50,https://www.gatineauhonda.com,49,website_static_used_link,2026-05-06,
+Gatineau Kia,Gatineau,Isabelle Ricard,Former Customer,41,https://www.gatineaukia.ca,180,website_js_cards,2026-05-06,
+St-Raymond Toyota,Saint-raymond,Maxime Beland,Prospect,33,https://www.straymondtoyota.com/inventaire.html,33,website_static,2026-05-06,
+Honda New Richmond,New Richmond,Maxime Beland,Prospect,30,https://www.hondanewrichmond.com/occasion/recherche.html,40,website_static,2026-05-06,
+Kia Levis,Levis,Maxime Beland,Former Customer,30,https://www.kialevis.com,30,website_static,2026-05-06,
+Cliche Auto Ford,Vallée-Jonction,Maxime Beland,Former Customer,30,https://www.clicheauto.com/,33,website_static,2026-05-06,
+Desjardins Volkswagen,Québec,Maxime Beland,Former Customer,29,https://www.desjardinsvolkswagen.ca,46,website_static,2026-05-06,
+Pinard Ford,Sainte-Julienne,Maxime Beland,Prospect,29,https://www.pinardford.com,270,website_js_cards,2026-05-06,
+St-Georges Toyota,Saint-Georges,Maxime Beland,Former Customer,26,https://www.stgeorgestoyota.ca/,26,website_static,2026-05-06,
+Carella Honda,Amos,Maxime Beland,Prospect,25,https://www.carellahonda.com,18,website_static,2026-05-06,
+Villeneuve Volvo,Matane,Maxime Beland,Prospect,23,https://www.villeneuvevolvo.ca,23,website_js,2026-05-06,
+Olivier Hyundai Baie-Comeau,Baie-Comeau,Isabelle Ricard,Prospect,21,https://www.olivierhyundai.com,25,website_static/inventaire/search.html?used=1,2026-05-06,
+L'Etoile Dodge Chrysler Inc.,Jonquiere,Maxime Beland,Prospect,21,https://www.letoiledodge.com,30,website_static,2026-05-06,
+Paquin Ford,Rouyn-Noranda,Lambros Karnahoritis,Prospect,20,https://www.paquinford.com/inventaire.html,35,website_static,2026-05-06,
+Paquin Mazda,Rouyn-Noranda,Lambros Karnahoritis,Prospect,15,https://www.paquinmazda.com,38,website_static_used_link,2026-05-06,
+Banlieue Ford,Saint-Apollinaire,Maxime Beland,Prospect,14,https://www.banlieueford.com,12,website_static,2026-05-06,
+Formule Mazda,Rimouski,Maxime Beland,Former Customer,14,https://www.formulemazda.com,93,website_static,2026-05-06,
+Gareau Kia,Mont-laurier,Isabelle Ricard,Prospect,11,https://www.kiamontlaurier.ca/inventaire.html,30,website_static,2026-05-06,
+Sept-Iles Subaru,Sept-Îles,Maxime Beland,Prospect,8,https://www.septilessubaru.com,1,website_static_used_link,2026-05-06,
+Alma Mazda,Alma,Maxime Beland,Prospect,6,https://lamijuniormazda.com/mazda-cx-30-2026-un-vus-polyvalent-pense-pour-la-realite-du-saguenay-lac-saint-jean,224,website_js_cards,2026-05-06,
+Olivier Kia Baie-Comeau,Baie-Comeau,Isabelle Ricard,Prospect,5,https://www.olivierkiabaiecomeau.com,30,website_static,2026-05-06,
+Jaguar West Island,Dollard-des Ormeaux,Lambros Karnahoritis,Former Customer,4,https://www.jaguarwestisland.ca,6,website_static_used_link,2026-05-06,
+Venne Ford,Repentigny,Isabelle Ricard,Prospect,1,https://www.venneford.ca,14,website_js_cards,2026-05-06,
+Groupe Olivier,Saint-basile-le-grand,Isabelle Ricard,Prospect,0,https://www.groupeolivier.com,1462,website_static,2026-05-06,
+Belvedere Nissan,Saint-Jerome,Isabelle Ricard,Former Customer,0,https://www.belvederenissan.com,2,website_static_used_link,2026-05-06,
+Groupe LeClair,Montréal,Isabelle Ricard,Former Customer,0,https://www.groupeleclair.com/fr/centres-doccasion,470,website_static,2026-05-06,
+Auto Urbain,Gatineau,Isabelle Ricard,Prospect,0,https://hyundaigatineau.ca/entreposage-des-pneus,254,website_js_cards,2026-05-07,
+Chomedey Toyota Laval,Laval,Isabelle Ricard,Prospect,0,https://www.chomedeytoyotalaval.ca,80,website_static,2026-05-07,
+Albi Le Geant Mazda Mascouche,Mascouche,Isabelle Ricard,Prospect,0,https://www.albimazda.com/,94,website_static,2026-05-07,
+Alliance Ford,Sainte-Agathe-des-Monts,Isabelle Ricard,Former Customer,0,https://www.allianceford.com,77,website_static,2026-05-07,
+Belvedere Nissan Ste-Agathe,Sainte-Agathe-des-Monts,Isabelle Ricard,Prospect,0,https://www.belvederenissan.com,2,website_static_used_link,2026-05-07,
+Lombardi Honda,Saint-leonard,Isabelle Ricard,Prospect,0,https://www.lombardihonda.com,56,website_static,2026-05-07,
+Sherbrooke Honda,Sherbrooke,Isabelle Ricard,Former Customer,0,https://www.sherbrookehonda.com,30,website_static,2026-05-07,
+Selection Auto Direct,Sainte-Rose,Isabelle Ricard,Former Customer,0,https://www.selectionauto.ca/,243,website_js_cards,2026-05-07,
+Toyota Mont-Laurier,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.toyotamontlaurier.com,218,website_js_cards,2026-05-07,
+Infiniti Blainville,Blainville,Isabelle Ricard,Former Customer,0,https://www.infinitiblainville.com,204,website_js_cards,2026-05-07,
+Aubaine Auto,Laval,Isabelle Ricard,Former Customer,0,https://automm2016.ca/,55,website_js_cards,2026-05-07,
+Groupe auto FB,Montréal-Est,Isabelle Ricard,Former Customer,0,https://www.automedia.ca/concessionnaires-automobiles-labc-de-la-pub-sur-le-web/,18,website_js,2026-05-07,
+Chambly Honda,Chambly,Isabelle Ricard,Former Customer,0,https://www.chamblyhonda.com,90,website_static,2026-05-07,
+Chomedey Hyundai,Laval,Isabelle Ricard,Former Customer,0,https://www.chomedeyhyundai.com,22,website_static/inventaire/search.html?used=1,2026-05-07,
+Fecteau Ford,La Guadeloupe,Isabelle Ricard,Former Customer,0,https://www.fecteauford.com,14,website_static,2026-05-07,
+Complexe Kia Montreal,Pointe-aux-Trembles,Isabelle Ricard,Former Customer,0,https://www.complexekia.com,30,website_static,2026-05-07,
+Taddeo Auto Centre Certifie,Laval,Isabelle Ricard,Former Customer,0,https://www.groupetaddeo.com,1,website_static_used_link,2026-05-07,
+Olivier Occasion Baie-Comeau,Baie-Comeau,Isabelle Ricard,Former Customer,0,https://www.olivierchryslerbaiecomeau.com/occasion/recherche.html,35,website_static,2026-05-07,
+Belvedere Nissan Mont-Laurier,Mont-Laurier,Isabelle Ricard,Former Customer,0,https://www.belvederenissan.com,2,website_static_used_link,2026-05-07,
+Kasano Auto,Blainville,Isabelle Ricard,Former Customer,0,https://www.hondablainville.com/inventaire.html,78,website_static,2026-05-07,
+Auto Kent Inc.,Anjou,Isabelle Ricard,Former Customer,0,https://www.autokent.ca/,48,website_static,2026-05-07,
+Gareau Toyota,Val-d'or,Isabelle Ricard,Prospect,0,https://www.valdortoyota.ca/,208,website_js_cards,2026-05-07,
+Longueuil Toyota,Longueuil,Isabelle Ricard,Prospect,0,https://www.longueuiltoyota.ca,1105,website_static,2026-05-07,
+Ste-Therese Toyota,Sainte-therese,Isabelle Ricard,Prospect,0,https://www.stetheresetoyota.com,10,website_static_used_link,2026-05-07,
+Performe Hyundai,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.performehyundai.com,81,website_static_used_link,2026-05-07,
+Performe Mazda,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.performemazda.com,81,website_static_used_link,2026-05-07,
+Val-d'Or Mazda Inc.,Val-d'Or,Isabelle Ricard,Prospect,0,https://www.valdormazda.com,17,website_static_used_link,2026-05-07,
+Amos Mazda,Amos,Isabelle Ricard,Prospect,0,https://paquinmazda.com/le-mazda-cx-70-2026,37,website_static_used_link,2026-05-07,
+Giroux Chrysler Dodge Jeep,Ste-agathe-des-monts,Isabelle Ricard,Prospect,0,https://www.girouxchrysler.com,31,website_static,2026-05-07,
+Clement Chrysler Dodge Ltd,Lorrainville,Isabelle Ricard,Prospect,0,https://www.clementchrysler.ca,210,website_js_cards,2026-05-07,
+Val-D'Or Nissan Inc,Val-d'or,Isabelle Ricard,Prospect,0,https://www.valdornissan.com,14,website_static,2026-05-07,
+Joliette Nissan,Joliette,Isabelle Ricard,Prospect,0,https://www.joliettenissan.com,1,website_static_used_link,2026-05-07,
+Belvedere Nissan Saint-Jerome,Saint-jerome,Isabelle Ricard,Prospect,0,https://www.belvederenissan.com,2,website_static_used_link,2026-05-07,
+Chartrand Ford,Laval,Isabelle Ricard,Prospect,0,https://www.chartrandford.ca,1,website_static_used_link,2026-05-07,
+Hyundai De Lanaudiere,Joliette,Isabelle Ricard,Prospect,0,https://www.hyundailanaudiere.com,13,website_static/inventaire/search.html?used=1,2026-05-07,
+Paille Chevrolet Buick GMC Sorel-Tracy,Sorel-tracy,Isabelle Ricard,Prospect,0,https://www.paillechevrolet.ca,20,website_js_cards,2026-05-07,
+Hamilton Chevrolet Buick GMC,Wakefield,Isabelle Ricard,Prospect,0,https://www.hamiltongmc.com,149,website_js_cards,2026-05-07,
+Giroux Mitsubishi,Sainte-Agathe-des-Monts,Isabelle Ricard,Prospect,0,https://www.girouxmitsubishi.com/,17,website_static_used_link,2026-05-07,
+Maserati Montreal,Mont-Royal,Isabelle Ricard,Prospect,0,https://www.maseratimontreal.com,31,website_static/inventaire/search.html?used=1,2026-05-07,
+Maserati Laval,Laval,Isabelle Ricard,Prospect,0,https://www.maseratilaval.com,31,website_static/inventaire/search.html?used=1,2026-05-07,
+Dormani Infiniti Gatineau,Gatineau,Isabelle Ricard,Prospect,0,https://www.dormaniinfiniti.ca,38,website_static,2026-05-07,
+Groupe Megantic,Lac-Mégantic,Lambros Karnahoritis,Prospect,0,https://www.meganticmazda.ca/occasion/recherche.html,43,website_static,2026-05-07,
+Kia St-Hyacinthe,Saint-Hyacinthe,Lambros Karnahoritis,Former Customer,0,https://www.kiasthyacinthe.com,30,website_static,2026-05-07,
+Hyundai Chateauguay,Chateauguay,Lambros Karnahoritis,Prospect,0,https://www.hyundaichateauguay.ca,5,website_static/inventaire/search.html?used=1,2026-05-07,
+Longueuil Honda,Longueuil,Lambros Karnahoritis,Prospect,0,https://www.longueuilhonda.com,64,website_static,2026-05-07,
+Nissan Gabriel Pointe-Aux Trembles,Pointe-aux-Trembles,Lambros Karnahoritis,Former Customer,0,https://www.nissangabriel.com,194,website_static,2026-05-07,
+Auto Adis,Montreal,Lambros Karnahoritis,Prospect,0,https://www.autoglobalmtl.com/fr,277,website_js,2026-05-07,
+Mario Gagne Automobiles,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://mariogagneautomobiles.com/,76,website_js_cards,2026-05-07,
+Auto Younik,Chateauguay,Lambros Karnahoritis,Prospect,0,https://www.hyundaichateauguay.ca/inventaire.html,5,website_static,2026-05-07,
+Jgb Auto,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.sherbrookeautooccasion.com/occasion/recherche.html,89,website_static,2026-05-07,
+Automobiles Normand Comeau,McMasterville,Lambros Karnahoritis,Prospect,0,https://www.normand.ca,6,website_static,2026-05-07,
+CM Automobile,Lachine,Lambros Karnahoritis,Prospect,0,https://www.automobile-propre.com/videos/une-dacia-spring-au-quotidien-ca-donne-quoi/,29,website_static/occasion,2026-05-07,
+Centre de Liquidation BD,Granby,Lambros Karnahoritis,Former Customer,0,https://www.centreliquidationbd.com,1,website_static_used_link,2026-05-07,
+Aston Martin Montreal,Montréal,Lambros Karnahoritis,Prospect,0,https://www.astonmartinmontreal.com,45,website_static_used_link,2026-05-07,
+Fichault Occasion,Chateauguay,Lambros Karnahoritis,Prospect,0,https://www.fichaultoccasion.com,30,website_static,2026-05-07,
+Auto Financement Action,Saint-Jean-sur-Richelieu,Lambros Karnahoritis,Prospect,0,https://www.autofinancementaction.net/inventaire/,132,website_js,2026-05-07,
+Ford St-Basile,Saint-Basile-le-Grand,Lambros Karnahoritis,Prospect,0,https://www.fordstbasile.ca,38,website_static/occasion,2026-05-07,
+Occasion Beaucage St-Hyacinthe,St-Hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.occasionbeaucage.com/nos-concessions/,1200,website_static,2026-05-07,
+Occasion Beaucage Granby,Granby,Lambros Karnahoritis,Prospect,0,https://www.occasionbeaucage.com/auto-usage/,1200,website_static,2026-05-07,
+Rousseau Nissan,Dolbeau-Mistassini,Lambros Karnahoritis,Prospect,0,https://www.garagerousseaunissanqc.ca/inventaire.html,14,website_static,2026-05-07,
+L'Ami Honda,Rouyn-Noranda,Lambros Karnahoritis,Prospect,0,https://www.lamihonda.com,84,website_static,2026-05-07,
+Bessette Automobile,Cowansville,Lambros Karnahoritis,Prospect,0,https://www.ramtruck.ca/fr/vehicules-neufs/concessionnaire/C4022/ramtruck/1500dt,96,website_js_cards,2026-05-07,
+Dion Chevrolet Buick GMC Inc,Magog,Lambros Karnahoritis,Prospect,0,https://www.dionchevrolet.com,2,website_static_used_link,2026-05-07,
+Garage Tardif Ltee,Amos,Lambros Karnahoritis,Prospect,0,https://www.garagetardif.com,37,website_static_used_link,2026-05-07,
+Thibault Chevrolet Sherbrooke,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.thibaultchevrolet.com,56,website_static_used_link,2026-05-07,
+Boucherville Mitsubishi,Boucherville,Lambros Karnahoritis,Prospect,0,https://www.bouchervillemitsubishi.com/occasion/recherche.html,3,website_static,2026-05-07,
+Sorel-Tracy Mitsubishi,Sorel-tracy,Lambros Karnahoritis,Prospect,0,https://www.sorel-tracyford.ca/carrosserie.html,1,website_static,2026-05-07,
+Action Kia,Rouyn-Noranda,Lambros Karnahoritis,Prospect,0,https://www.actionkia.ca/demonstrateurs/KIA.html,30,website_static,2026-05-07,
+Granby Toyota,Granby,Lambros Karnahoritis,Prospect,0,https://www.granbytoyota.ca,30,website_static,2026-05-07,
+Mazda de Magog,Magog,Lambros Karnahoritis,Prospect,0,https://www.mazdademagog.com/,3,website_static,2026-05-07,
+Elegance Acura,Granby,Lambros Karnahoritis,Former Customer,0,https://www.eleganceacura.com/fr/inventaire-occasion-elegance,1,website_static,2026-05-07,
+Granby Chrysler Inc.,Granby,Lambros Karnahoritis,Prospect,0,https://www.granbychrysler.com,118,website_static,2026-05-07,
+Thibault Automobile inc.,Amos,Lambros Karnahoritis,Prospect,0,https://www.thibaultamos.ca,34,website_static_used_link,2026-05-07,
+Baril Ford Lincoln,Saint-Hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.barilford.com/,45,website_static,2026-05-07,
+Ostiguy Ford Lincoln,Richelieu,Lambros Karnahoritis,Prospect,0,https://www.ostiguylincoln.ca,2,website_static,2026-05-07,
+Nissan Magog,Magog,Lambros Karnahoritis,Former Customer,0,https://www.nissanmagog.com,8,website_static_used_link,2026-05-07,
+Victoriaville Nissan,Victoriaville,Lambros Karnahoritis,Prospect,0,https://www.nissanvictoriaville.com/,150,website_static_used_link,2026-05-07,
+Valleyfield Nissan,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.valleyfieldnissan.com,4,website_static,2026-05-07,
+Automobiles Robert Inc,Coaticook,Lambros Karnahoritis,Prospect,0,https://www.robert.com,4,website_static,2026-05-07,
+Fichault Kia,Chateauguay,Lambros Karnahoritis,Prospect,0,https://www.fichaultkia.com/inventaire/calculatrice-pret-auto.html,30,website_static,2026-05-07,
+Vision Chevrolet Buick GMC,Delson,Lambros Karnahoritis,Prospect,0,https://www.visionchevroletbuickgmc.ca/fr/inventaire-neuf,33,website_static,2026-05-07,
+Volvo Sherbrooke,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.volvosherbrooke.com,26,website_js,2026-05-07,
+Hamel Hyundai,Saint-Eustache,Lambros Karnahoritis,Former Customer,0,https://www.hamelhyundai.com,11,website_static/inventaire/search.html?used=1,2026-05-07,
+Hyundai Granby,Granby,Lambros Karnahoritis,Prospect,0,https://hyundaigranby.com/contact,2,website_js,2026-05-07,
+Chateauguay Toyota,Châteauguay,Lambros Karnahoritis,Prospect,0,https://www.chateauguaytoyota.com/fr/inventaire-occasion,10,website_static,2026-05-07,
+Honda Casavant,Saint-hyacinthe,Lambros Karnahoritis,Former Customer,0,https://www.hondacasavant.com,53,website_static,2026-05-07,
+Hyundai Casavant,Saint-hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.hyundaicasavant.com/,7,website_static/inventaire/search.html?used=1,2026-05-07,
+Val Estrie Ford,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.valestrie.com/neufs/inventaire/recherche.html,76,website_static,2026-05-07,
+St-Hubert Toyota,Carignan,Lambros Karnahoritis,Prospect,0,https://www.sthuberttoyota.com/inventaire.html,30,website_static,2026-05-07,
+Sherbrooke Toyota,Sherbrooke,Lambros Karnahoritis,Former Customer,0,https://www.sherbrooketoyota.ca,213,website_js_cards,2026-05-07,
+Nissan Gabriel Plateau,Montreal,Lambros Karnahoritis,Prospect,0,https://www.nissangabriel.com,202,website_static,2026-05-07,
+Megantic Mazda,Lac-Mégantic,Lambros Karnahoritis,Prospect,0,https://www.meganticmazda.ca/,43,website_static,2026-05-07,
+Mercedes-Benz Granby,Granby,Lambros Karnahoritis,Prospect,0,https://www.mercedes-benz-granby.ca,113,website_static,2026-05-07,
+Toyota Richmond,Richmond,Lambros Karnahoritis,Prospect,0,https://www.toyotarichmond.ca,22,website_static_used_link,2026-05-07,
+Prestige Ford,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.prestigeford.ca/,26,website_static,2026-05-07,
+Mazda Gabriel St-Laurent,Montréal,Lambros Karnahoritis,Prospect,0,https://www.mazdagabriel.com,120,website_static,2026-05-07,
+Das Welt Auto Estrie,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.dasweltautoestrie.com/occasion/id10278094-2022.html,89,website_static,2026-05-07,
+Honda Sorel-Tracy,Sorel-tracy,Lambros Karnahoritis,Prospect,0,https://acuratroisrivieres.com/acura-rdx-occasion,164,website_js_cards,2026-05-07,
+Hyundai St-Constant,Saint-Constant,Lambros Karnahoritis,Prospect,0,https://www.hyundaistconstant.com,8,website_static/inventaire/search.html?used=1,2026-05-07,
+Groupe Taddeo Auto,Laval,Lambros Karnahoritis,Prospect,0,https://www.groupetaddeo.com/fr/inventaire-occasion/vehicule,1,website_static,2026-05-07,
+Groupe Auto Quebec,Thetford Mines,Maxime Beland,Former Customer,0,https://www.dubeautoyota.com/fr/inventaire-occasion,44,website_static,2026-05-07,
+Groupe MHT,Drummondville,Maxime Beland,Former Customer,0,https://www.groupemht.com,385,website_static,2026-05-07,
+Groupe Beaucage,Sherbrooke,Maxime Beland,Prospect,0,https://www.groupebeaucage.com/,1200,website_static_used_link,2026-05-07,
+Duclos Laval Chrysler,Laval,Maxime Beland,Former Customer,0,https://www.ducloschryslerlaval.com,160,website_static,2026-05-07,
+Honda Drummondville,Drummondville,Maxime Beland,Former Customer,0,https://www.hondadrummondville.ca/neufs/comparer/Honda-Prologue-2026-EX_L-vs-Honda-Odyssey-2025-Touring.html,78,website_static,2026-05-07,
+Montplaisir GM,Drummondville,Maxime Beland,Former Customer,0,https://www.montplaisir.ca,1,website_static_used_link,2026-05-07,
+Beauce Auto Ford Lincoln,Beauceville,Maxime Beland,Former Customer,0,https://www.beaucelincoln.ca/,2,website_static,2026-05-07,
+Laquerre Ford Inc.,Victoriaville,Maxime Beland,Former Customer,0,https://www.laquerreford.com,51,website_static,2026-05-07,
+Mazda Chatel,Quebec,Maxime Beland,Former Customer,0,https://www.mazdachatel.com/occasion/recherche.html,56,website_static,2026-05-07,
+Levis Mazda,Lévis,Maxime Beland,Former Customer,0,https://www.levismazda.com,44,website_static,2026-05-07,
+Duclos Chrysler Longueuil,Longueuil,Maxime Beland,Former Customer,0,https://www.ducloschryslerlongueuil.com,160,website_static,2026-05-07,
+Duclos Chrysler Mercier,Mercier,Maxime Beland,Former Customer,0,https://www.ducloschryslermercier.com,160,website_static,2026-05-07,
+Trois-Rivieres Honda,Trois-rivieres,Maxime Beland,Former Customer,0,https://www.troisriviereshonda.com,53,website_static,2026-05-07,
+Groupe Roy Auto (Hyundai Victoriaville),Victoriaville,Maxime Beland,Former Customer,0,https://www.royauto.com/new/2025-Kia-Soul-GT_Line_Limited.html,30,website_js,2026-05-07,
+Option Subaru,Québec,Maxime Beland,Former Customer,0,https://optionsubaru.com/,48,website_static,2026-05-07,
+Laurier Mazda,Québec,Maxime Beland,Former Customer,0,https://www.lauriermazda.com,23,website_static,2026-05-07,
+Comme1neuf,Château-Richer,Maxime Beland,Former Customer,0,https://www.comme1neuf.com,220,website_js,2026-05-07,
+Groupe Veloce,Rivière-du-Loup,Maxime Beland,Prospect,0,https://www.groupeveloce.com,1,website_static_used_link,2026-05-07,
+Lallier Ste-Foy,Quebec,Maxime Beland,Prospect,0,https://www.lallierstefoy.com,56,website_static,2026-05-07,
+Mercedes-Benz Trois-Rivieres,Trois-Rivières,Maxime Beland,Prospect,0,https://www.mercedes-benz.ca,74,website_js_cards,2026-05-07,
+Kia Victoriaville,Victoriaville,Maxime Beland,Prospect,0,https://www.kiavictoriaville.com,30,website_static,2026-05-07,
+St-Onge Kia,Shawinigan,Maxime Beland,Prospect,0,https://www.stongekia.com,30,website_static,2026-05-07,
+Kia Cap-Sante,Cap-sante,Maxime Beland,Prospect,0,https://www.kiacapsante.com/inventaire.html,30,website_static,2026-05-07,
+Kia Charlevoix,Baie-saint-paul,Maxime Beland,Prospect,0,https://www.kiacharlevoix.com,30,website_static,2026-05-07,
+Kia New Richmond,New Richmond,Maxime Beland,Prospect,0,https://www.kianewrichmond.com/,30,website_static,2026-05-07,
+Kia Gaspe,Gaspé,Maxime Beland,Prospect,0,https://www.kiagaspe.com,418,website_static,2026-05-07,
+Kia Sorel-Tracy,Sorel-tracy,Maxime Beland,Prospect,0,https://www.kiasoreltracy.com,30,website_static,2026-05-07,
+Montmagny Mazda,Montmagny,Maxime Beland,Prospect,0,https://montmagnymazda.com/inventaire,29,website_js,2026-05-07,
+Sept-Iles Mazda,Sept-Îles,Maxime Beland,Prospect,0,https://www.septilesmazda.ca,51,website_static_used_link,2026-05-07,
+Villeneuve Mazda,Matane,Maxime Beland,Prospect,0,https://www.villeneuvemazda.ca,1,website_static_used_link,2026-05-07,
+Blais Mazda,Sainte-Marie,Maxime Beland,Prospect,0,https://www.blaismazda.com,27,website_static_used_link,2026-05-07,
+Sittelle Mazda,Saint-Georges,Maxime Beland,Prospect,0,https://www.sittellemazda.ca,32,website_static,2026-05-07,
+Charlevoix Mazda,Baie-saint-paul,Maxime Beland,Prospect,0,https://www.charlevoixmazda.com,20,website_static_used_link,2026-05-07,
+Baie-Comeau Mazda,Baie-comeau,Maxime Beland,Prospect,0,https://www.baiecomeaumazda.com,282,website_static_used_link,2026-05-07,
+Toyota Victoriaville,Victoriaville,Maxime Beland,Prospect,0,https://www.toyotavictoriaville.ca,100,website_static,2026-05-07,
+Gaspe Toyota,Gaspe,Maxime Beland,Prospect,0,https://www.gaspe-toyota.com,11,website_static,2026-05-07,
+Matane Toyota,Matane,Maxime Beland,Prospect,0,https://www.matanetoyota.ca/occasion/recherche.html,17,website_static,2026-05-07,
+Manic Toyota,Baie-comeau,Maxime Beland,Prospect,0,https://www.manictoyota.com,220,website_js_cards,2026-05-07,
+Riviere-du-Loup Toyota,Rivière-du-Loup,Maxime Beland,Prospect,0,https://www.rivieredulouptoyota.com/fr,21,website_static_used_link,2026-05-07,
+St-Felicien Toyota,Saint-felicien,Maxime Beland,Prospect,0,https://www.stfelicientoyota.com/,20,website_static,2026-05-07,
+Toyota Baie-des-Chaleurs,Caplan,Maxime Beland,Prospect,0,https://www.toyotabaiedeschaleurs.com/inventaire.html,39,website_static,2026-05-07,
+Alix Toyota,Montreal,Maxime Beland,Prospect,0,https://www.alixtoyota.com,72,website_static,2026-05-07,
+Honda Charlesbourg,Charlesbourg,Maxime Beland,Prospect,0,https://www.hondacharlesbourg.com/occasion/recherche.html,20,website_static,2026-05-07,
+Honda Charlevoix,La Malbaie,Maxime Beland,Prospect,0,https://www.hondacharlevoix.com/,34,website_static,2026-05-07,
+Avantage Honda,Shawinigan,Maxime Beland,Prospect,0,https://www.avantagehonda.com/,94,website_static,2026-05-07,
+Matane Honda,Matane,Maxime Beland,Prospect,0,http://matanehonda.com/honda-cr-v-hybride,15,website_static_used_link,2026-05-07,
+Gaspe Honda,Gaspe,Maxime Beland,Prospect,0,https://www.gaspe-honda.com,11,website_static,2026-05-07,
+Honda Degiro Inc,Montmagny,Maxime Beland,Prospect,0,https://www.hondadegiro.com/fr/inventaire-occasion,1,website_static,2026-05-07,
+Alma Acura,Alma,Maxime Beland,Prospect,0,https://www.alma-acura.com,60,website_static,2026-05-07,
+Baie-Comeau Nissan,Baie-Comeau,Maxime Beland,Prospect,0,https://baiecomeaunissan.com/contact,282,website_static_used_link,2026-05-07,
+Matane Nissan,Matane,Maxime Beland,Prospect,0,https://matanenissan.com/occasion,4,website_static,2026-05-07,
+St-Felicien Nissan Inc.,Saint-felicien,Maxime Beland,Prospect,0,https://www.stfeliciennissan.com,26,website_static,2026-05-07,
+Grand-Portage Nissan,Rivière-du-Loup,Maxime Beland,Prospect,0,https://www.grandportagenissan.com,133,website_static,2026-05-07,
+Vachon Subaru,Saint-Georges,Maxime Beland,Prospect,0,https://www.vachonsubaru.com,2,website_static_used_link,2026-05-07,
+Saguenay Volkswagen,Chicoutimi,Maxime Beland,Prospect,0,https://saguenayvolkswagen.com,47,website_static,2026-05-07,
+Alma Volkswagen,Alma,Maxime Beland,Prospect,0,https://www.almavw.com/modeles/Volkswagen-Tiguan.html,53,website_static,2026-05-07,
+Volkswagen New Richmond,New Richmond,Maxime Beland,Prospect,0,https://www.newrichmondvw.ca/,39,website_static,2026-05-07,
+Shawinigan Chrysler,Shawinigan,Maxime Beland,Prospect,0,https://www.chryslershawinigan.com/,95,website_static,2026-05-07,
+Thetford Chrysler Jeep Dodge Ram,Thetford Mines,Maxime Beland,Prospect,0,https://www.thetfordchrysler.com,19,website_static,2026-05-07,
+Kennebec Dodge Chrysler Inc.,Saint-Georges,Maxime Beland,Prospect,0,https://www.kennebecdodge.ca,4,website_static_used_link,2026-05-07,
+Chicoutimi Chrysler Dodge Jeep Inc.,Saguenay,Maxime Beland,Prospect,0,https://www.chicoutimichryslerdodge.com,52,website_static,2026-05-07,
+Boulay Dodge Chrysler Inc,Gaspé,Maxime Beland,Prospect,0,https://www.boulaydodge.ca/en/,170,website_js_cards,2026-05-07,
+Bernier et Crepeau Chrysler Fiat,Trois-rivieres,Maxime Beland,Prospect,0,https://www.berniercrepeau.com,21,website_static,2026-05-07,
+Alma Ford,Alma,Maxime Beland,Prospect,0,https://www.almaford.ca/occasion/inventaire-vehicules-occasion.html,28,website_static,2026-05-07,
+Rimouski Ford,Rimouski,Maxime Beland,Prospect,0,https://www.rimouskiford.com/usage/,59,website_static,2026-05-07,
+Villeneuve Ford,Matane,Maxime Beland,Prospect,0,https://www.villeneuveford.com,1,website_static_used_link,2026-05-07,
+Impact Ford,Riviere-du-loup,Maxime Beland,Prospect,0,https://www.impactford.com,2,website_static_used_link,2026-05-07,
+St-Onge Ford,Grand-mere,Maxime Beland,Prospect,0,https://www.st-onge-ford.com,64,website_static,2026-05-07,
+Ford New Richmond,New Richmond,Maxime Beland,Prospect,0,https://www.fordnewrichmond.com,52,website_static,2026-05-07,
+Performance Ford,La Malbaie,Maxime Beland,Prospect,0,https://www.performance-ford.ca/occasion/Ford.html,6,website_static,2026-05-07,
+Frechette Ford,Montmagny,Maxime Beland,Prospect,0,https://www.frechetteford.com,19,website_static_used_link,2026-05-07,
+Methot Chevrolet Buick GMC,Victoriaville,Maxime Beland,Prospect,0,https://www.methotchevrolet.ca/fr,7,website_static_used_link,2026-05-07,
+Cartier Chevrolet Buick GMC,Quebec,Maxime Beland,Prospect,0,https://www.cartierchevrolet.com/,67,website_static,2026-05-07,
+Bourgeois Chevrolet Buick GMC,Rawdon,Maxime Beland,Prospect,0,https://www.bourgeoischevrolet.com/neufs/inventaire/a8b3dQe9Bj1K9-1K9q0-10x0-0-0.html,23,website_static,2026-05-07,
+Hyundai Beauce,Saint-georges,Maxime Beland,Prospect,0,https://www.hyundaibeauce.com,4,website_static/inventaire/search.html?used=1,2026-05-07,
+Gosselin Auto,Saint-Nicolas,Maxime Beland,Prospect,0,https://ste-foytoyota.com/,80,website_static,2026-05-07,
+Hyundai du Saguenay,Jonquière,Maxime Beland,Prospect,0,https://www.hyundaisaguenay.ca,10,website_static/inventaire/search.html?used=1,2026-05-07,
+Saguenay Mitsubishi,Chicoutimi,Maxime Beland,Prospect,0,https://www.saguenay-mitsubishi.ca,18,website_static_used_link,2026-05-07,
+Beauce Mitsubishi,Notre-dame-des-pins,Maxime Beland,Prospect,0,https://www.beaucemitsubishi.ca,6,website_static_used_link,2026-05-07,
+Volkswagen de L'Estrie,Sherbrooke,Maxime Beland,Prospect,0,https://vwsherbrooke.com/entreprise/a-propos/,89,website_static,2026-05-07,
+Levis Chrysler,Lévis,Maxime Beland,Former Customer,58,https://www.levischrysler.com/inventaire/calculatrice-pret-auto.html,58,website_static,2026-05-07,
+Alma Honda,Alma,Maxime Beland,Prospect,46,https://www.almahonda.com,58,website_static,2026-05-07,
+Richard Auto,Drummondville,Lambros Karnahoritis,Prospect,45,https://occasion.genesisestrie.ca/auto-usage/mercedesbenz-cclass-2017-a-vendre-sherbrooke/,30,website_static,2026-05-07,
+Jlk Auto,Montreal,Isabelle Ricard,Former Customer,39,https://www.jlkauto.ca/inventaire/?page=2,47,website_static,2026-05-07,
+Cadillac Ile Perrot,Pincourt,Lambros Karnahoritis,Former Customer,13,https://www.cadillacileperrot.ca,3,website_js,2026-05-07,
+Rimouski Toyota,Rimouski,Maxime Beland,Prospect,8,https://www.rimouskitoyota.ca,8,website_js,2026-05-07,
+Centre d auto St-Michel,Montreal,Lambros Karnahoritis,Prospect,7,https://www.automedia.ca/lamvoq-et-operation-enfant-soleil-un-record-absolu/,18,website_js,2026-05-07,
+Camions Commerciaux Lemieux,Rimouski,Maxime Beland,Prospect,4,https://www.camionscommerciaux.ca,1,website_static_used_link,2026-05-07,
+Michel Automobiles,Drummondville,Lambros Karnahoritis,Prospect,3,https://www.mitsubishidrummondville.com/,10,website_static_used_link,2026-05-07,
+Les Automobiles Laco 2006 Inc.,Sherbrooke,Lambros Karnahoritis,Prospect,1,https://llsautomobiles.com.usitestat.com/,12,website_static,2026-05-07,
+Subaru Granby,Granby,Lambros Karnahoritis,Prospect,1,https://www.nissangranby.com/auto-usage/subaru/,1,website_static,2026-05-07,
+Groupe Excellence,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.excellencedodge.com/,51,website_static,2026-05-07,
+Dormani Group,Gatineau,Isabelle Ricard,Former Customer,0,https://www.dormaninissan.ca/,39,website_static,2026-05-07,
+Mega Auto Laval,Laval,Isabelle Ricard,Prospect,0,https://www.mega.com,10,website_js_cards,2026-05-07,
+Gatineau Autos,Gatineau,Isabelle Ricard,Prospect,0,https://hyundaigatineau.ca/,41,website_static_used_link,2026-05-07,
+Subaru Rive-Nord,Boisbriand,Isabelle Ricard,Former Customer,0,https://www.subarurivenord.com,246,website_static,2026-05-07,
+Groupe Automobile Laval,Laval,Isabelle Ricard,Prospect,0,https://renault-laval.groupeguilmault.fr/voitures/occasion/,50,website_static,2026-05-07,
+Rive-Nord Chrysler,Saint-Jérôme,Isabelle Ricard,Former Customer,0,https://www.rivenordchrysler.com,28,website_static,2026-05-07,
+Mazda de Laval,Laval,Isabelle Ricard,Prospect,0,https://www.mazda.ca,2,website_js_cards,2026-05-07,
+Liquid auto,Blainville,Isabelle Ricard,Former Customer,0,https://www.blainvillechrysler.com/,10,website_static,2026-05-07,
+Hgreg Lux,Laval,Isabelle Ricard,Former Customer,0,https://www.hgreglux.com,46,website_js_cards,2026-05-07,
+Subaru Ste-Agathe,Sainte-agathe-des-monts,Isabelle Ricard,Former Customer,0,https://www.subarusteagathe.ca,29,website_static,2026-05-07,
+Mazda Boucherville,Boucherville,Isabelle Ricard,Former Customer,0,https://www.mazda.ca,2,website_js_cards,2026-05-07,
+Landry Automobiles Ltee,Laval,Isabelle Ricard,Former Customer,0,https://www.ramtruck.ca/fr/concessionnaires/C4924,13,website_js_cards,2026-05-07,
+Financement Auto LB,Gatineau,Isabelle Ricard,Former Customer,0,https://gatineauacura.com/acura-rdx-2021,31,website_static_used_link,2026-05-07,
+Groupe Auto RSP,Montréal,Isabelle Ricard,Former Customer,0,https://www.groupeautorsp.com/fr/inventaire,3,website_js_cards,2026-05-07,
+Poirier Hyundai,Val-d'or,Isabelle Ricard,Prospect,0,https://www.poirierhyundai.ca/neuf/inventaire/Electrique.html,1,website_js_cards,2026-05-07,
+Gendron Chrysler Dodge Jeep,Maniwaki,Isabelle Ricard,Prospect,0,https://www.jeep.ca/fr/concessionnaires/C4215,11,website_js_cards,2026-05-07,
+Blainville Ford,Blainville,Isabelle Ricard,Prospect,0,https://www.blainvilleford.com/inventaire/calculatrice-pret-auto.html,17,website_static,2026-05-07,
+Shawville Ford Inc.,Shawville,Isabelle Ricard,Prospect,0,https://www.shawvilleford.com,30,website_static,2026-05-07,
+Lachapelle Buick GMC,Gatineau,Isabelle Ricard,Prospect,0,https://www.lachapellebuickgmc.com/fr/neuf/GMC.html?pg=3,4,website_static/vehicules-occasion,2026-05-07,
+Auto Mont Chevrolet Buick GMC,Mont-Laurier,Isabelle Ricard,Prospect,0,https://www.automont.ca/fr,23,website_static_used_link,2026-05-07,
+Des Sources Alfa Romeo,Dollard-des-Ormeaux,Isabelle Ricard,Prospect,0,https://blogue.dessourcesalfaromeo.com/fr/alfa-romeo-tonale-prix-et-fiche-technique/,283,website_js_cards,2026-05-07,
+Groupe Paquin,Rouyn-Noranda,Lambros Karnahoritis,Prospect,0,https://paquinmazda.com/inventaire/occasion/ford-super-duty-f-250-srw-2022/3832,84,website_static/inventaire/search.html?used=1,2026-05-07,
+Prestige Automobiles Drummond,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.mitsubishidrummondville.com/,10,website_static_used_link,2026-05-07,
+Occasion 100 Limites,Drummondville,Lambros Karnahoritis,Prospect,0,https://occasion.genesisestrie.ca/auto-usage/cadillac-a-vendre-sherbrooke/,31,website_static,2026-05-07,
+Au Ben Auto,Lac-Mégantic,Lambros Karnahoritis,Prospect,0,https://www.meganticmazda.ca/occasion/recherche.html,43,website_static,2026-05-07,
+Volkswagen St-Hyacinthe,Saint-Hyacinthe,Lambros Karnahoritis,Former Customer,0,https://occasion.genesisestrie.ca/auto-usage/cadillac-a-vendre-sherbrooke/,31,website_static,2026-05-07,
+Gestion Service Auto +,Granby,Lambros Karnahoritis,Prospect,0,https://www.gestionserviceautoplus.com/,5,website_js_cards,2026-05-07,
+Go Automobile,Saint-Hubert,Lambros Karnahoritis,Prospect,0,https://www.olivierford.com/,96,website_static,2026-05-07,
+Centre De La Traction Integrale,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.nissanvictoriaville.com/auto-usage/traction-integrale/,150,website_static,2026-05-07,
+Decarie Jaguar,Montréal,Lambros Karnahoritis,Prospect,0,https://www.decarie.com,41,website_js,2026-05-07,
+Bentley Montreal,Montréal,Lambros Karnahoritis,Prospect,0,https://www.bentleymontreal.com,45,website_static,2026-05-07,
+Hondashop,Montréal,Lambros Karnahoritis,Prospect,0,https://www.hondashop.hu/,3,website_js_cards,2026-05-07,
+Granby Auto Bas Prix,Granby,Lambros Karnahoritis,Prospect,0,https://hyundaigranby.com/occasion,37,website_static,2026-05-07,
+Auto Flash,St.-Hubert,Lambros Karnahoritis,Former Customer,0,https://www.autoflash.net/auto-usage-ford-d-occasion-a-vendre/,270,website_js_cards,2026-05-07,
+Kia de Drummondville,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.kiadrummondville.com,24,website_static_used_link,2026-05-07,
+Hyundai Sherbrooke,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.hyundaisherbrooke.com,9,website_static/inventaire/search.html?used=1,2026-05-07,
+Magog Hyundai,Magog,Lambros Karnahoritis,Prospect,0,https://www.hyundaimagog.com/,1500,website_static,2026-05-07,
+Norauto Nissan,Amos,Lambros Karnahoritis,Prospect,0,https://www.norautonissan.com/fr/inventaire-occasion,7,website_static,2026-05-07,
+Audet Kia Megantic,Lac-Mégantic,Lambros Karnahoritis,Prospect,0,https://www.audetkiamegantic.com/used/Kia-Soul.html,30,website_static,2026-05-07,
+En Direct Chrysler,Saint-hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.chrysler.ca/fr/concessionnaires/C4033,7,website_js_cards,2026-05-07,
+Chasse Toyota,Montréal,Lambros Karnahoritis,Former Customer,0,https://www.chassetoyota.com,3,website_static,2026-05-07,
+Sorel-Tracy Nissan inc,Sorel-tracy,Lambros Karnahoritis,Prospect,0,https://www.soreltracynissan.ca,31,website_static,2026-05-07,
+Decarie Motors,Montreal,Lambros Karnahoritis,Prospect,0,https://www.decarie.com,41,website_js,2026-05-07,
+Boucherville Chrysler Dodge Jeep Ram Fiat,Boucherville,Lambros Karnahoritis,Prospect,0,https://www.bouchervillechrysler.ca/,237,website_js_cards,2026-05-07,
+Granby Mitsubishi,Granby,Lambros Karnahoritis,Prospect,0,https://www.mitsubishigranby.com/auto-usage/,12,website_static,2026-05-07,
+Solution Mazda,Chateauguay,Lambros Karnahoritis,Prospect,0,https://www.solutionmazda.ca,113,website_static_used_link,2026-05-07,
+Nissan Drummondville,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.nissandrummondville.com/auto-usage/,51,website_static,2026-05-07,
+Mazda Du Boulevard St-Hyacinthe,Saint-hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.mazda.ca,2,website_js_cards,2026-05-07,
+Valleyfield Toyota,Salaberry-de-valleyfield,Lambros Karnahoritis,Prospect,0,https://www.valleyfieldtoyota.com,12,website_static,2026-05-07,
+Groupe Beaucage Drummondville,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.kiadrummondville.com/auto-usage/,24,website_static,2026-05-07,
+Sherbrooke Auto Occasion,Sherbrooke,Lambros Karnahoritis,Former Customer,0,https://occasion.genesisestrie.ca/auto-usage/,31,website_static,2026-05-07,
+Hyundai Gabriel P.A.T,Montreal,Lambros Karnahoritis,Former Customer,0,https://www.hyundaigabriel.com,146,website_static,2026-05-07,
+Groupe Solution,Châteauguay,Lambros Karnahoritis,Prospect,0,https://solutionford.com/inventaire,283,website_static,2026-05-07,
+Groupe Saillant,Québec,Maxime Beland,Prospect,0,https://groupesaillantautocredit.com/inventaire/,3,website_js,2026-05-07,
+L'ami Junior Group,Chicoutimi,Maxime Beland,Prospect,0,https://www.lamijuniornissan.com/auto-usage/,297,website_static,2026-05-07,
+Groupe Mondou,Shawinigan,Maxime Beland,Prospect,0,https://www.groupemondou.com/,65,website_static,2026-05-07,
+Trois-Rivieres Mitsubishi,Trois-rivieres,Maxime Beland,Former Customer,0,https://www.troisrivieresmitsubishi.ca,2,website_static_used_link,2026-05-07,
+Desjardins Subaru,Ville de Québec,Maxime Beland,Former Customer,0,https://www.desjardinssubaru.com,12,website_static_used_link,2026-05-07,
+Ste-Foy Hyundai,Québec,Maxime Beland,Former Customer,0,https://stefoyhyundai.com/,16,website_static,2026-05-07,
+Groupe Roy Auto,Victoriaville,Maxime Beland,Prospect,0,https://www.royauto.com/new/2025-Kia-Soul-GT_Line_Limited.html,30,website_static,2026-05-07,
+Honda Victoriaville,Victoriaville,Maxime Beland,Prospect,0,https://www.hondavictoriaville.com,30,website_static,2026-05-07,
+Hyundai Victoriaville,Victoriaville,Maxime Beland,Prospect,0,https://www.hyundaivictoriaville.com,6,website_static/inventaire/search.html?used=1,2026-05-07,
+Rimouski Hyundai,Rimouski,Maxime Beland,Prospect,0,https://www.rimouskihyundai.com,20,website_static/inventaire/search.html?used=1,2026-05-07,
+Kia Beauport,Quebec,Maxime Beland,Prospect,0,https://www.kiabeauport.com,30,website_static,2026-05-07,
+Mazda Drummondville,Drummondville,Maxime Beland,Prospect,0,https://www.mazdadrummondville.com,62,website_static,2026-05-07,
+Mazda L'Ami Junior 2.0,Saguenay,Maxime Beland,Prospect,0,https://www.mazda.ca,2,website_js_cards,2026-05-07,
+Boulevard Toyota,Quebec,Maxime Beland,Prospect,0,https://boulevardtoyota.com/notre-histoire/,13,website_static,2026-05-07,
+Toyota Charlesbourg,Ville de Québec,Maxime Beland,Prospect,0,https://www.toyota.ca,27,website_js_cards,2026-05-07,
+Sept-Iles Toyota inc.,Sept-iles,Maxime Beland,Prospect,0,https://www.septilestoyota.ca/,27,website_static,2026-05-07,
+Alma Nissan,Alma,Maxime Beland,Prospect,0,https://www.almanissan.com/inventaire.html,54,website_static,2026-05-07,
+Rimouski Nissan Inc.,Rimouski,Maxime Beland,Prospect,0,https://www.rimouskinissan.com,22,website_static,2026-05-07,
+Subaru Trois-Rivieres,Trois-rivieres,Maxime Beland,Prospect,0,https://www.subarutroisrivieres.com,47,website_static_used_link,2026-05-07,
+Infiniti Quebec,Quebec,Maxime Beland,Prospect,0,https://www.infinitiquebec.com,2,website_js,2026-05-07,
+Didier Dodge Chrysler Inc.,Amqui,Maxime Beland,Prospect,0,https://www.didierdodge.ca,405,website_static_used_link,2026-05-07,
+Boulevard Chevrolet Cadillac Buick GMC Inc,Rimouski,Maxime Beland,Prospect,0,https://www.boulevardgmc.com,168,website_js_cards,2026-05-07,
+Mitsubishi Victoriaville,Victoriaville,Maxime Beland,Prospect,0,https://www.victoriavillemitsubishi.ca,6,website_static_used_link,2026-05-07,
+Rimouski Mitsubishi,Rimouski,Maxime Beland,Prospect,0,https://www.rimouski-mitsubishi.ca,1,website_js_cards,2026-05-07,
+Volkswagen Brossard,Brossard,Maxime Beland,Former Customer,40,https://www.brossardcadillac.ca/fr/inventaire-occasion/volkswagen,14,website_static,2026-05-07,
+Auto Sur Commande Rive Nord,Sainte-Marthe-sur-le-Lac,Lambros Karnahoritis,Prospect,24,https://sbxauto.com/,4,static_cards/inventory/used,2026-05-07,
+Automobile Paquin Ltée,Saint-bruno-de-guigues,Isabelle Ricard,Prospect,12,https://ford.automobilepaquin.qc.ca/,10,website_static,2026-05-07,
+Land Rover Jaguar de Québec,Québec,Maxime Beland,Prospect,11,https://www.landroverjaguar.com,,FERMÉ,2026-05-07,site_parque
+Sept-Îles Honda,Sept-Îles,Maxime Beland,Prospect,11,https://www.septileshonda.com/fr,20,static_cards/inventaire,2026-05-07,
+SE Autogroupe,Montréal,Isabelle Ricard,Prospect,8,https://www.autosmontreal.ca/fr,10,static_cards/inventaire,2026-05-07,
+Albi Le Géant,Mascouche,Isabelle Ricard,Former Customer,0,https://www.albinissan.com/services.html,1113,website_static,2026-05-07,
+Le Roi de l'Auto,Thurso,Isabelle Ricard,Prospect,0,https://www.roidelauto.ca/,30,website_static,2026-05-07,
+Les Autos Et Camions,Mont-Laurier,Isabelle Ricard,Prospect,0,https://www.toyotamontlaurier.com/,32,website_static_used_link,2026-05-07,
+Auto Collection,Gatineau,Isabelle Ricard,Prospect,0,https://www.toyotagatineau.ca/fr/inventaire-occasion,346,website_static,2026-05-07,
+Auto Zone Mr,Montreal,Isabelle Ricard,Former Customer,0,https://www.autosmontreal.ca/fr,10,static_cards/inventaire,2026-05-07,
+Automobile Lambert,Laval,Isabelle Ricard,Prospect,0,https://www.automobile-lambert.com/cars/,100,website_js,2026-05-07,
+Garage Blainville Volvo,Blainville,Isabelle Ricard,Prospect,0,https://www.mercedes-benz-blainville.ca/fr/inventaire-occasion/volvo,100,website_static,2026-05-07,
+Go Pro Auto,Montréal,Isabelle Ricard,Prospect,0,https://www.auto-primo.ca/,204,website_static,2026-05-07,
+Auto Credit National,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.nationalcityautocenter.com/used-vehicles/Used+Alfa+Romeo+tm,44,website_js_cards,2026-05-07,
+Rimar Volkswagen,Saint-leonard,Isabelle Ricard,Former Customer,0,https://www.rimarvw.com/contactus.html,30,website_static,2026-05-07,
+Groupe Saint-Pierre,Gatineau,Isabelle Ricard,Former Customer,0,https://www.toyotagatineau.ca/en,20,static_cards/inventory/used,2026-05-07,
+Auto TL,Lachute,Isabelle Ricard,Former Customer,0,https://www.autotl.ca/nous-joindre/,,FERMÉ,2026-05-07,HTTP 404
+Automobiles de la Blanche,Gatineau,Isabelle Ricard,Former Customer,0,https://hyundaigatineau.ca/en,12,website_static,2026-05-07,
+Autos DJ,Mirabel,Isabelle Ricard,Former Customer,0,https://www.centralautos.fr/lancement-audi-q8-e-tron-mars23/,12,website_js_cards,2026-05-07,
+L'ami Paul Nolin Auto,Laval,Isabelle Ricard,Former Customer,0,http://autolaval.ca/,1,static_cards/inventaire/search.html?used=1,2026-05-07,
+Automobile Greber Jn,Gatineau,Isabelle Ricard,Former Customer,0,https://www.automobilegreber.ca/,1,static_cards/inventory/used,2026-05-07,
+Volkswagen Lachute,Lachute,Isabelle Ricard,Prospect,0,https://www.vwlachute.com/,26,website_static,2026-05-07,
+Volkswagen Ste-Agathe,Ste-Agathe-des-Monts,Isabelle Ricard,Prospect,0,https://www.vwsteagathe.com/,66,website_static,2026-05-07,
+Luciani Chevrolet,Montreal,Isabelle Ricard,Prospect,0,https://www.lerelaischevrolet.com/fr/inventaire-occasion,2,website_static,2026-05-07,
+Casavant Group,Saint-hyacinthe,Lambros Karnahoritis,Former Customer,0,https://www.hyundaicasavant.com/eng/,1,website_js_cards,2026-05-07,
+Christian Bolduc Auto,Weedon,Lambros Karnahoritis,Prospect,0,https://www.christian.com,,FERMÉ,2026-05-07,site_parque
+Lemire Automobiles,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.lemireautomobiles.com/,29,website_js,2026-05-07,
+Autoplex Certifie,Montreal,Lambros Karnahoritis,Former Customer,0,https://www.autoplex.com,422,website_js,2026-05-07,
+Mathews Bardier Autos,Sorel-Tracy,Lambros Karnahoritis,Prospect,0,https://www.sorel-tracyford.ca/occasion/recherche.html,1,website_static,2026-05-07,
+Jlm Autos,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://sherbrooketoyota.ca/occasion,78,website_static,2026-05-07,
+Auto Concept 222,Roxton Falls,Lambros Karnahoritis,Prospect,0,https://www.concept.ca,,FERMÉ,2026-05-07,site_parque
+Les Automobiles Mayray,Richelieu,Lambros Karnahoritis,Prospect,0,https://www.ostiguyford.ca/occasion/recherche.html,12,website_static,2026-05-07,
+Mpr Motors,Napierville,Lambros Karnahoritis,Prospect,0,https://www.mprmotors.com,340,website_static,2026-05-07,
+Deragon Group,Cowansville,Lambros Karnahoritis,Prospect,0,https://www.deragonford.com/occasion/recherche.html,32,website_static,2026-05-07,
+Commerce D'Auto D'Echange,Lasalle,Lambros Karnahoritis,Prospect,0,https://www.kiadelasalle.ca/inventaire.html,30,website_static,2026-05-07,
+Carrefour Montreal Auto,Montréal,Lambros Karnahoritis,Prospect,0,https://www.carrefour40640toyota.ca/inventaire/occasion,141,website_js,2026-05-07,
+Mon Auto Ton Prix,Carignan,Lambros Karnahoritis,Former Customer,0,https://www.monautotonprix.ca/vehicles/chevrolet/,,FERMÉ,2026-05-07,HTTP 404
+Les Automobiles Laplante,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://sherbrooketoyota.ca/en,4,website_static,2026-05-07,
+Automobiles Claude Couture Inc.,Mont-Saint-Hilaire,Lambros Karnahoritis,Prospect,0,https://www.claudecouture.ca,,FERMÉ,2026-05-07,site_parque
+Roger Renaud Automobiles Inc.,Saint-Chrysostome,Lambros Karnahoritis,Prospect,0,https://www.automobilerogerrenaud.com/,14,website_js,2026-05-07,
+Garage Fausse Inc.,Granby,Lambros Karnahoritis,Prospect,0,https://hyundaigranby.com/,37,website_static_used_link,2026-05-07,
+Fox Auto Credit,Longueuil,Lambros Karnahoritis,Prospect,0,https://www.foxautocredit.com/la-faillite-ou-la-proposition-du-consommateur,,FERMÉ,2026-05-07,HTTP 404
+La Foire de l'Auto,Longueuil,Lambros Karnahoritis,Prospect,0,https://www.longueuilkia.com/,30,website_static,2026-05-07,
+JY Services Auto,Montréal,Lambros Karnahoritis,Prospect,0,https://www.automobileendirect.com/,150,website_js,2026-05-07,
+Auto 360 Estrie,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://www.auto360estrie.com/,186,website_js,2026-05-07,
+Lemieux Autosport,Granby,Lambros Karnahoritis,Prospect,0,https://www.lemieux.com,,FERMÉ,2026-05-07,site_parque
+Excellence Vaudreuil Dodge Chrysler,Vaudreuil-Dorion,Lambros Karnahoritis,Prospect,0,https://www.chrysler.ca/en/dealers/C4695,7,website_js_cards,2026-05-07,
+Encore Automobiles ltee,Chateauguay,Lambros Karnahoritis,Prospect,0,https://www.jeep.ca/fr/concessionnaires/C4924,11,website_js_cards,2026-05-07,
+Les Automobiles M Rocheleau Inc,Cowansville,Lambros Karnahoritis,Prospect,0,https://fr.nokiantyres.ca/points-de-vente/trouvez-votre-detaillant-nokian-tyres/,,FERMÉ,2026-05-07,site_parque
+Hyundai Cowansville,Cowansville,Lambros Karnahoritis,Prospect,0,https://www.kiacowansville.com/,13,website_static_used_link,2026-05-07,
+Courtier Auto Laval,Montréal,Lambros Karnahoritis,Former Customer,0,https://autolaval.ca/fr,1,static_cards/inventaire/search.html?used=1,2026-05-07,
+Acces Toyota,Rouyn-Noranda,Lambros Karnahoritis,Prospect,0,https://www.accestoyota.ca/fr/inventaire-occasion,35,website_js,2026-05-07,
+Formule Ford,Granby,Lambros Karnahoritis,Prospect,0,https://fordgranby.com/inventaire-neuf,119,website_static,2026-05-07,
+Poirier Ford Inc,Sorel-tracy,Lambros Karnahoritis,Prospect,0,https://www.sorel-tracyford.ca/occasion/recherche.html,1,website_static,2026-05-07,
+Nissan Saint-Hyacinthe,Saint-Hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.nissansthyacinthe.com/,50,website_static_used_link,2026-05-07,
+Kia Megantic,Lac-megantic,Lambros Karnahoritis,Prospect,0,https://www.audetkiamegantic.com/used/Kia-Soul.html,,FERMÉ,2026-05-07,site_parque
+Mitsubishi de Drummondville,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.mitsubishidrummondville.com/,8,website_static_used_link,2026-05-07,
+Location Gabriel St-Laurent,Montreal,Lambros Karnahoritis,Former Customer,0,https://www.location.ca,3,static_cards/inventaire/search.html?used=1,2026-05-07,
+Automobile Gabriel Saint-Catherine,Montreal,Lambros Karnahoritis,Former Customer,0,https://www.jeepchryslergabriel.ca/occasion/recherche.html,26,website_static,2026-05-07,
+Groupe Lessard,Saint-Georges,Maxime Beland,Prospect,0,https://www.hyundaibeauce.com/,4,static/inventaire/search.html?used=1,2026-05-07,
+Groupe Ouellet,Matane,Maxime Beland,Former Customer,0,https://www.matanetoyota.ca/occasion/recherche.html,18,website_static,2026-05-07,
+Groupe Laval Saguenay,Saguenay,Maxime Beland,Prospect,0,https://concessionnaire.renault.fr/laval.html,179,static_cards/inventaire/search.html?used=1,2026-05-07,
+Groupe Vincent,Trois-Rivières,Maxime Beland,Prospect,0,https://www.avantagehonda.com/,92,website_static,2026-05-07,
+MGH auto,Gatineau,Maxime Beland,Former Customer,0,https://mgh-auto.business.site/,,FERMÉ,2026-05-07,HTTP 404
+Automobiles Desjardins,Québec,Maxime Beland,Former Customer,0,https://affairesautomobiles.ca/2022/04/desjardins-bonification-de-son-reseau-de-bornes-electriques/,1,static_cards/occasion,2026-05-07,
+Robichaud Autos,Granby,Maxime Beland,Former Customer,0,https://www.robichaud-autos.com/,43,website_js,2026-05-07,
+Garage Clement Fournier inc.,Lévis,Maxime Beland,Former Customer,0,https://www.garageclement.com,,FERMÉ,2026-05-07,site_parque
+Hyundai du Royaume,Chicoutimi,Maxime Beland,Prospect,0,https://www.hyundai.com/fr/fr.html,37,website_static_used_link,2026-05-07,
+Trois-Rivieres Toyota,Trois-rivieres,Maxime Beland,Prospect,0,https://www.trois.ca,,FERMÉ,2026-05-08,site_parque
+Toyota Cap-a-L'Aigle,La Malbaie,Maxime Beland,Prospect,0,https://www.toyota.ca,27,website_js_cards,2026-05-08,
+Auto Manic Honda,Baie-comeau,Maxime Beland,Prospect,0,https://www.honda.ca/Content/honda.ca/699cf93f-eaea-462e-99fa-c0ea9314eac4/GenericContent_FFH/2016_Honda_Warranty-F.pdf,,FERMÉ,2026-05-08,site_parque
+Roy Nissan Inc.,Gaspe,Maxime Beland,Prospect,0,http://www.roynissangaspe.ca/fr/a-vendre/tous/occasion,1,static_cards/inventaire/search.html?used=1,2026-05-08,
+Grand Portage Volkswagen,Notre-Dame-du-Portage,Maxime Beland,Prospect,0,https://www.grandportagevw.com/,135,website_static,2026-05-08,
+Saint-Raymond Ford,Saint-Raymond,Maxime Beland,Prospect,0,https://www.straymondford.ca/occasion/recherche.html,23,website_static,2026-05-08,
+Trois-Rivieres Ford Lincoln,Trois-rivieres,Maxime Beland,Prospect,0,https://www.trfordlincoln.com/eng/,30,website_static,2026-05-08,
+Arnold Chevrolet Buick GMC Cadillac Inc,Jonquiere,Maxime Beland,Prospect,0,https://www.arnoldchevroletbuick.com,195,website_js_cards,2026-05-08,
+Bilodeau Chevrolet Buick GMC,Sainte-Anne-de-Beaupré,Maxime Beland,Prospect,0,https://www.chevroletbuickgmcofmurfreesboro.com/,162,website_js_cards,2026-05-08,
+St-Georges Chevrolet Buick Cadillac GMC,Saint-Georges,Maxime Beland,Former Customer,40,https://www.stgeorgesgm.ca/occasion/recherche.html,36,website_static,2026-05-08,
+Autos Yvon Blais,Drummondville,Lambros Karnahoritis,Prospect,11,https://www.nissandrummondville.com/auto-usage/,52,website_static,2026-05-08,
+L'Ange-Gardien Volkswagen,L'ange Gardien,Maxime Beland,Former Customer,11,https://www.desjardinsvolkswagen.ca/neuf/inventaire/Autos.html,55,website_static,2026-05-08,
+St-Nic Auto,Lévis,Maxime Beland,Prospect,10,https://levisautomobile.ro/,307,website_js_cards,2026-05-08,
+Desjardins Jeep,Verdun,Maxime Beland,Former Customer,9,https://www.jeep.ca/fr/concessionnaires,11,website_js_cards,2026-05-08,
+Bardier Auto Inc.,McMasterville,Lambros Karnahoritis,Prospect,5,https://bardierauto.com/,18,website_static_used_link,2026-05-08,
+SB Automobile,Levis,Maxime Beland,Prospect,5,https://www.sbautomobiles.ca/vehicule-usage/kia-sorento-2016/4952782/,,FERMÉ,2026-05-08,HTTP 404
+Garage P. Vezina Matane,Matane,Maxime Beland,Prospect,5,https://www.matanetoyota.ca/occasion/recherche.html,18,website_static,2026-05-08,
+VB AUTOS,Coaticook,Lambros Karnahoritis,Prospect,2,https://www.vbautos.ca/,11,website_js,2026-05-08,
+Subaru New Richmond,New Richmond,Maxime Beland,Prospect,2,https://www.subarunewrichmond.com/fr/inventaire-occasion,14,website_static,2026-05-08,
+Auto Clic,Mascouche,Isabelle Ricard,Prospect,0,https://www.autoclic.ca/vehicles/2013/chevrolet/sonic/mascouche/qc/67595993/?sale_class=d'occasion,70,website_js_cards,2026-05-08,
+Auto Star,Saint-Eustache,Isabelle Ricard,Prospect,0,https://www.autoscout24.fr/,385,website_js,2026-05-08,
+K&K Cars,Gatineau,Isabelle Ricard,Prospect,0,https://www.toyotagatineau.ca/en,20,static_cards/inventory/used,2026-05-08,
+Auto Royale,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.autoscout24.fr/,387,website_js,2026-05-08,
+Val-D'or Chrysler,Val-d'or,Isabelle Ricard,Prospect,0,https://www.gareaucadillac.ca/fr/inventaire-occasion/chrysler,31,website_static,2026-05-08,
+440 Ford Lincoln Laval,Laval,Isabelle Ricard,Prospect,0,https://desjardins440ford.ca/,16,website_js_cards,2026-05-08,
+Hyundai Blainville,Blainville,Isabelle Ricard,Prospect,0,https://www.hyundaiblainville.com/inventaire,121,website_static,2026-05-08,
+Ferrari Maserati Quebec,Montreal,Isabelle Ricard,Prospect,0,https://ferraridealers.com/fr-FR,239,website_js,2026-05-08,
+Groupe Bernier Daigle,Granby,Lambros Karnahoritis,Prospect,0,https://www.granbytoyota.ca/occasion/recherche.html,,FERMÉ,2026-05-08,site_parque
+St Bruno Nissan Incorporated,Saint-Basile-le-Grand,Lambros Karnahoritis,Prospect,0,https://www.stbrunonissanmontreal.ca/,29,website_static_used_link,2026-05-08,
+Automobile Serge Caron,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,http://sergecaronautomobiles.com/,,FERMÉ,2026-05-08,site_parque
+Auto Sector,Lachine,Lambros Karnahoritis,Prospect,0,https://www.spinellitoyotalachine.com/fr/inventaire-occasion,67,website_js,2026-05-08,
+J N Auto Road Side,Cleveland,Lambros Karnahoritis,Prospect,0,https://jnauto.com/a-propos/,,FERMÉ,2026-05-08,HTTP 404
+Pret Auto 60 Minutes,Montreal,Lambros Karnahoritis,Former Customer,0,https://inventaire.pretauto60minutes.ca/,205,website_js,2026-05-08,
+Seray Auto inc.,Chambly,Lambros Karnahoritis,Prospect,0,https://www.seraychamblyhyundai.com/inventaire.html,16,website_static,2026-05-08,
+Deux Rives Chrysler Dodge Jeep,Sorel-Tracy,Lambros Karnahoritis,Prospect,0,https://www.chrysler.ca/fr/concessionnaires/C4144,7,website_js_cards,2026-05-08,
+Elegance Leasing,Montreal,Lambros Karnahoritis,Former Customer,0,https://www.laleasing.ca/en/,159,website_js_cards,2026-05-08,
+Auto Action Inc.,Saint-François-du-Lac,Lambros Karnahoritis,Former Customer,0,https://www.autoscout24.fr/,395,website_js,2026-05-08,
+Groupe Paquet,Montmagny,Maxime Beland,Prospect,0,https://www.paquetnissan.com/equipe.html,418,website_static,2026-05-08,
+La Force Kia,Québec,Maxime Beland,Prospect,0,https://www.kiaquebec.com/inventaire.html,,FERMÉ,2026-05-08,site_parque
+Groupe Whittom,Sept-Îles,Maxime Beland,Prospect,0,https://www.septilessubaru.com/fr/inventaire-occasion,1,website_static,2026-05-08,
+JD Jeep Ram,Boischatel,Maxime Beland,Former Customer,0,https://www.jdboischatelmitsubishi.ca/used/Jeep.html,1,website_js_cards,2026-05-08,
+Kia De Lasalle,Lasalle,Maxime Beland,Former Customer,0,https://kia.jeanrouyerautomobiles.fr/voitures/neuves/kia/,21,website_static,2026-05-08,
+Groupe Steve Poulin,Thetford Mines,Maxime Beland,Prospect,0,https://www.steve.com,,FERMÉ,2026-05-08,site_parque
+Granby Volkswagen,Granby,Maxime Beland,Prospect,0,https://www.mercedes-benz-granby.ca/fr/inventaire-occasion/volkswagen,115,website_static,2026-05-08,
+La Perade Ford,Sainte-Anne-de-la-Pérade,Maxime Beland,Prospect,0,https://www.laperadeford.com/,1,website_static,2026-05-08,
+Sept-Iles Chevrolet Buick GMC,Sept-Îles,Maxime Beland,Prospect,0,https://www.lamijuniornissan.com/auto-usage/,,FERMÉ,2026-05-08,site_parque
+JD auto.ca,Scott,Maxime Beland,Prospect,26,,,non_trouve,2026-05-08,url_introuvable
+Automobiles MRZ,Saint-Gédéon,Maxime Beland,Former Customer,24,https://www.trtoyota.ca/occasion/recherche.html,41,website_static,2026-05-08,
+CP Automobiles,Saint-Michel,Lambros Karnahoritis,Prospect,9,https://www.groupecp.ca,3,autousagee.ca,2026-05-08,site:not_found_js
+Michel Julien Autos,Beauharnois,Isabelle Ricard,Former Customer,8,https://www.autoscout24.com/,,FERMÉ,2026-05-08,site_parque
+Paul Gamelin et Fils,Sorel-Tracy,Lambros Karnahoritis,Prospect,7,,6,autousagee.ca,2026-05-08,url_introuvable
+Autonet Go Incorporated.,Saint-Félix-de-Kingsey,Lambros Karnahoritis,Former Customer,6,https://autonet.az/,80,website_js_cards,2026-05-08,
+Lord and Freres Ltee,Tourville,Maxime Beland,Prospect,6,,,non_trouve,2026-05-08,url_introuvable
+Automobile F Dubeau,Lourdes-de-Joliette,Isabelle Ricard,Prospect,4,,5,autousagee.ca,2026-05-08,url_introuvable
+Yvon Hébert Autos,Saint-Isidore,Maxime Beland,Prospect,3,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Statim Transport Inc.,Montréal,Isabelle Ricard,Prospect,2,,,non_trouve,2026-05-08,url_introuvable
+Accès Auto SM Inc.,Québec,Maxime Beland,Prospect,2,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Conseil Auto PG Enr.,Lévis,Maxime Beland,Prospect,2,https://www.autocreditplus.ca/,7,website_js,2026-05-08,
+Dominick Auto Sport,Sherbrooke,Lambros Karnahoritis,Prospect,1,https://sherbrooketoyota.ca/en,4,website_static,2026-05-08,
+J.A. Larue Inc.,Quebec,Maxime Beland,Prospect,1,,,non_trouve,2026-05-08,url_introuvable
+Groupe Duval,Boucherville,Isabelle Ricard,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+John Scotti Automotive Group,Saint-Léonard,Isabelle Ricard,Former Customer,0,https://johnscotticlassiccars.com/,165,static/inventaire/search.html?used=1,2026-05-08,
+Dilawri Group - Québec,St-Bruno,Isabelle Ricard,Former Customer,0,https://www.dilawri.ca,,non_trouve,2026-05-08,site:not_found_js
+Beaudry Autos,Repentigny,Isabelle Ricard,Prospect,0,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Les Vehicules Autostar,Saint-Eustache,Isabelle Ricard,Prospect,0,https://www.autostar.fr/,,non_trouve,2026-05-08,site:not_found_js
+L Gervais Autos Incorporated,Berthierville,Isabelle Ricard,Prospect,0,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Auto De Ville,Pincourt,Isabelle Ricard,Prospect,0,,45,autousagee.ca,2026-05-08,url_introuvable
+Auto Deby,Saint-Laurent,Isabelle Ricard,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Auto Sport Daytona,L'Assomption,Isabelle Ricard,Prospect,0,https://www.aramisauto.com/?msockid=074f6828108068e518797f7b115169b0,,non_trouve,2026-05-08,site:not_found_js
+Auto Nova,Montréal-nord,Isabelle Ricard,Prospect,0,https://heyauto.com/dealerships/toyota/qc/montreal,61,autousagee.ca,2026-05-08,site:not_found_js
+Automobile Provinciale,Laval,Isabelle Ricard,Prospect,0,https://www.automobile-magazine.fr/,,non_trouve,2026-05-08,site:not_found_js
+Spirale Auto,Montréal-nord,Isabelle Ricard,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Ace Autos,Laval,Isabelle Ricard,Prospect,0,https://www.autosdeal.ca/en-ca/home,,non_trouve,2026-05-08,site:not_found_js
+Lamarche Automobiles,Saint-Jérôme,Isabelle Ricard,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Top Alpine Auto,Laval,Isabelle Ricard,Former Customer,0,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Automobiles B.Charette,Sainte-Sophie,Isabelle Ricard,Former Customer,0,,11,autousagee.ca,2026-05-08,url_introuvable
+Langevin Automobiles,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.langevin.com,,non_trouve,2026-05-08,site:not_found_js
+Ventes d'autos Roxboro,Roxboro,Isabelle Ricard,Former Customer,0,,36,autousagee.ca,2026-05-08,url_introuvable
+Eric Auto,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.ericauto.com/,15,website_static,2026-05-08,
+Massawa Auto,Vaudreuil-Dorion,Isabelle Ricard,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Pro-Occasion Inc,Montréal,Isabelle Ricard,Former Customer,0,,1,autousagee.ca,2026-05-08,url_introuvable
+Auto Marco Polo,Laval,Isabelle Ricard,Former Customer,0,https://www.marco-polo-auto-repa.com/,,non_trouve,2026-05-08,site:not_found_js
+Auto Caspian,Longueuil,Isabelle Ricard,Former Customer,0,https://autocaspian.com/,,non_trouve,2026-05-08,site:not_found_js
+Automatik Credit Plus,Laval,Isabelle Ricard,Former Customer,0,https://www.automatikcreditplus.com/en-ca/home,,non_trouve,2026-05-08,site:not_found_js
+Autosette,Mirabel,Isabelle Ricard,Former Customer,0,https://www.autosette.com/,,non_trouve,2026-05-08,site:not_found_js
+Magistral Auto,Saint-Eustache,Isabelle Ricard,Former Customer,0,http://magistralauto.com/,,non_trouve,2026-05-08,site:not_found_js
+Les Sommets Chevrolet Buick GMC,Mont-tremblant,Isabelle Ricard,Prospect,0,https://www.sommets.com,,non_trouve,2026-05-08,site:not_found_js
+Leblanc Volkswagen,Mont-Laurier,Isabelle Ricard,Former Customer,0,https://www.leblancvw.com/en/for-sale/all/new/volkswagen,,non_trouve,2026-05-08,site:not_found_js
+Complexe Volkswagen 440,Montreal,Isabelle Ricard,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+John Scotti Lamborghini Montreal,Kirkland,Isabelle Ricard,Prospect,0,https://lamborghinimontreal.com/,20,website_static_used_link,2026-05-08,
+Rolls-Royce Motor Cars Quebec,Mont-Royal,Isabelle Ricard,Prospect,0,https://www.rolls-roycemotorcars.com/quebec/en_GB/showroom.html,,non_trouve,2026-05-08,site:not_found_js
+Groupe Dallaire,Québec,Lambros Karnahoritis,Former Customer,0,https://groupedallaire.ca/,,non_trouve,2026-05-08,site:not_found_js
+M Veilleux Auto,Ascot Corner,Lambros Karnahoritis,Prospect,0,https://mveilleuxautos.weebly.com/,,non_trouve,2026-05-08,site:not_found_js
+Automobiles J L,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://sherbrooketoyota.ca/,84,website_static_used_link,2026-05-08,
+Automobiles Gilbert Et Fils,Mercier,Lambros Karnahoritis,Prospect,0,https://www.groupegilbert.ca,,non_trouve,2026-05-08,site:not_found_js
+Granby Chevrolet Cadillac Buick GMC,Granby,Lambros Karnahoritis,Former Customer,0,https://www.granbycadillac.com/en,10,static_cards/inventory/used,2026-05-08,
+Volkswagen Popular Automobiles,Montreal,Lambros Karnahoritis,Prospect,0,https://www.vw.com/,,non_trouve,2026-05-08,site:not_found_js
+Auto Kallini,Vaudreuil-Dorion,Lambros Karnahoritis,Prospect,0,https://autokallini.com/,,non_trouve,2026-05-08,site:not_found_js
+Automobiles Rougemont,Saint-Césaire,Lambros Karnahoritis,Prospect,0,https://www.automobilesrougemont.com/contactez-nous/,6,autousagee.ca,2026-05-08,site:not_found_js
+Auto Selection Rive-Sud,La Prairie,Lambros Karnahoritis,Prospect,0,https://www.auto-selection.com/,,non_trouve,2026-05-08,site:not_found_js
+Auto Action Saint Jean Sur Richelieu,Saint-Jean-sur-Richelieu,Lambros Karnahoritis,Prospect,0,https://www.autoscout24.fr/,419,website_js,2026-05-08,
+Garage Andre Masse,Granby,Lambros Karnahoritis,Prospect,0,http://garageandremasse.com/contact.htm,,non_trouve,2026-05-08,site:not_found_js
+Aston Auto,Saint-Léonard-d'Aston,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Aj Automobile,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.automobileservices.info/company-thermo-batterie-valleyfield-in-salaberry-de-valleyfield-38530,,non_trouve,2026-05-08,site:not_found_js
+Denis Caron Automobiles,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.deniscaron.ca,,non_trouve,2026-05-08,site:not_found_js
+Garage Michel Chouinard,Coaticook,Lambros Karnahoritis,Prospect,0,https://www.garagemichel.ca,,non_trouve,2026-05-08,site:not_found_js
+Solutionautos,La Prairie,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Fred Auto,Montreal,Lambros Karnahoritis,Prospect,0,https://www.fred-auto-sport.fr/reprogrammation,,non_trouve,2026-05-08,site:not_found_js
+Les Automobiles Fc,Saint-Pie,Lambros Karnahoritis,Prospect,0,https://www.automobilesfc.com/,32,website_js,2026-05-08,
+Groupe Gabriel Occasion,Montreal,Lambros Karnahoritis,Prospect,0,https://www.occasiongabriel.com/en/,,non_trouve,2026-05-08,site:not_found_js
+Go Autos,Lacolle,Lambros Karnahoritis,Prospect,0,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Garage Francois Drolet,Granby,Lambros Karnahoritis,Prospect,0,https://www.garagefrancois.com,,non_trouve,2026-05-08,site:not_found_js
+L.D.B. Autos Enr,Sainte-Julie,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Courtier Automobile-Nicolas Racine,Saint-Constant,Lambros Karnahoritis,Prospect,0,https://www.autocourtier.com/,,non_trouve,2026-05-08,site:not_found_js
+Palmer Auto,Lachine,Lambros Karnahoritis,Former Customer,0,https://a-1autoinsurance.com/index2.html?state=MI,,non_trouve,2026-05-08,site:not_found_js
+A. J Automobile,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.automobileservices.info/company-yves-boutin-moteur-in-salaberry-de-valleyfield-55638,,non_trouve,2026-05-08,site:not_found_js
+Auto Credit Rive-Sud,Saint-Hubert,Lambros Karnahoritis,Prospect,0,https://www.autoscout24.fr/,404,website_js,2026-05-08,
+Masse Automobiles,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Automobile Dubuc,Sainte-Catherine,Lambros Karnahoritis,Prospect,0,https://www.vw.com/,,non_trouve,2026-05-08,site:not_found_js
+Automobiles Denis Rousse,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.automobilesdenisrousse.com/inventaire/,23,autousagee.ca,2026-05-08,site:not_found_js
+Denis Auclair autos Inc.,Granby,Lambros Karnahoritis,Prospect,0,https://www.denis-yves-auclair-autos.com/,3,autousagee.ca,2026-05-08,site:not_found_js
+Centre automobile Grand Bernier,Saint-Jean-sur-Richelieu,Lambros Karnahoritis,Prospect,0,https://www.coupalbrassardnissan.com/fr/inventaire-occasion,11,static_cards/inventaire/search.html?used=1,2026-05-08,
+Les Importations Burelle Inc.,Saint-Hyacinthe,Lambros Karnahoritis,Prospect,0,https://www.burelleauto.com/financement/,,non_trouve,2026-05-08,site:not_found_js
+DeVille Automobile,Granby,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Occasion Circuit,Granby,Lambros Karnahoritis,Prospect,0,https://www.occasioncircuit.ca,23,autousagee.ca,2026-05-08,site:not_found_js
+Alex Auto Credit,Montreal,Lambros Karnahoritis,Prospect,0,https://www.autoalex.ca/fr/occasion,,non_trouve,2026-05-08,site:not_found_js
+Gestion MMF,Saint-Jean-sur-Richelieu,Lambros Karnahoritis,Prospect,0,https://www.groupegestion.ca,,FERMÉ,2026-05-08,site_parque
+Occasion Sans Limite,Ascot Corner,Lambros Karnahoritis,Prospect,0,https://www.occasionsanslimite.com/termes-et-conditions/,11,autousagee.ca,2026-05-08,site:not_found_js
+Occasion Des Laurentides,Mirabel,Lambros Karnahoritis,Former Customer,0,https://occasiondeslaurentides.com.siteindices.com/,,non_trouve,2026-05-08,site:not_found_js
+Les Automobiles S. Lefrancois Inc.,Vaudreuil-Dorion,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Auto Imprest,Saint-Jean-sur-Richelieu,Lambros Karnahoritis,Prospect,0,https://autoimprest.ca/,,non_trouve,2026-05-08,site:not_found_js
+Park Avenue Audi,La Prairie,Lambros Karnahoritis,Prospect,0,https://www.park-avenue.ca,,non_trouve,2026-05-08,site:not_found_js
+Automobile 5000,Beloeil,Lambros Karnahoritis,Prospect,0,https://www.automobile5000.com/en-ca/contact-us,4,autousagee.ca,2026-05-08,site:not_found_js
+Chibougamau Automobile Inc.,Chibougamau,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+St-Hyacinthe Mitsubishi,Saint-hyacinthe,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Pierre Lefebvre Toyota,Sorel-tracy,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+DM Automobiles,Salaberry-de-Valleyfield,Lambros Karnahoritis,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Dandurand Automobiles,Salaberry-de-Valleyfield,Lambros Karnahoritis,Former Customer,0,https://www.automobileservices.info/company-dandurand-automobiles-inc-in-salaberry-de-valleyfield-36157,,non_trouve,2026-05-08,site:not_found_js
+Centre D'Auto Swedish,Montréal,Lambros Karnahoritis,Prospect,0,https://swedish-auto.com/contact/,,non_trouve,2026-05-08,site:not_found_js
+Weedon Automobiles,Weedon,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Soma Auto inc.,Amos,Lambros Karnahoritis,Prospect,0,https://www.automobileservices.info/company-soma-auto-inc-in-amos-50200,,non_trouve,2026-05-08,site:not_found_js
+Subaru Sherbrooke,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://subarusherbrooke.ca,,non_trouve,2026-05-08,site:not_found_js
+Autos Internationales,Lachine,Lambros Karnahoritis,Prospect,0,https://www.autosinternationales.com/inventaire.html?StartRow=1&Direction=N&ARRIVAGE=0&FACILITY_ID=0,,non_trouve,2026-05-08,site:not_found_js
+Autorama Drummond,Drummondville,Lambros Karnahoritis,Prospect,0,https://www.autoramadrummond.ca/,47,autousagee.ca,2026-05-08,site:not_found_js
+Brossard Chevrolet Buick GMC Inc,Brossard,Lambros Karnahoritis,Former Customer,0,https://www.visionchevroletbuickgmc.ca/fr/fusion-brossard-chevrolet-avec-vision,,non_trouve,2026-05-08,site:not_found_js
+Brossard Cadillac,Brossard,Lambros Karnahoritis,Prospect,0,https://www.brossardcadillac.ca/fr/inventaire-occasion,14,website_static,2026-05-08,
+JP Auto Farnham,Farnham,Lambros Karnahoritis,Prospect,0,https://www.jpautofarnham.com/en,,non_trouve,2026-05-08,site:not_found_js
+Morand Ford Lincoln,Saint-Constant,Lambros Karnahoritis,Prospect,0,https://www.morandlincoln.com/fr,2,website_static_used_link,2026-05-08,
+Autos En Gros,Saint-Sulpice,Lambros Karnahoritis,Former Customer,0,https://www.autosengros.ca/inventaire/,142,autousagee.ca,2026-05-08,site:not_found_js
+Limco,Châteauguay,Lambros Karnahoritis,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Leclerc Automobiles Int.,Sherbrooke,Lambros Karnahoritis,Prospect,0,https://leclercint.com/https-leclercint-com/,,non_trouve,2026-05-08,site:not_found_js
+Occasion Ville de Longueuil,Longueuil,Lambros Karnahoritis,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Moteurs Royaux,Carignan,Lambros Karnahoritis,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Auto 30,Salaberry-de-Valleyfield,Lambros Karnahoritis,Prospect,0,https://www.autoscout24.fr/,402,website_js,2026-05-08,
+Financement auto expert,Longueuil,Lambros Karnahoritis,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Hyundai Electrifie Gabriel,Montreal,Lambros Karnahoritis,Former Customer,0,https://www.hyundaielectrifiegabriel.com,,non_trouve,2026-05-08,site:not_found_js
+Vroom Auto,Montreal,Lambros Karnahoritis,Prospect,0,https://www.stjeromeautodepot.com/fr/inventaire-occasion,422,website_static,2026-05-08,
+Le Prix Duclos,Mercier,Maxime Beland,Former Customer,0,https://www.prix.com,,non_trouve,2026-05-08,site:not_found_js
+Le Groupe Automobile Desjardins,Vanier,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Theetge Auto Group,Saint-nicolas,Maxime Beland,Prospect,0,https://www.autoscout24.com/,,non_trouve,2026-05-08,site:not_found_js
+Groupe Grand Portage,Rivière-du-Loup,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Groupe Le Prix Du Gros,La Tuque,Maxime Beland,Prospect,0,https://www.leprixdugros.com/volvo-trois-rivieres/,,non_trouve,2026-05-08,site:not_found_js
+Toyotoshi Group Canada,Québec,Maxime Beland,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Cliche Ford Thetford Mines,Thetford Mines,Maxime Beland,Former Customer,0,https://www.vrthetford.com/fr/,,non_trouve,2026-05-08,site:not_found_js
+Automobiles de la Capitale,Château-Richer,Maxime Beland,Former Customer,0,,23,autousagee.ca,2026-05-08,url_introuvable
+Occasion Ville De Quebec,Sainte-Brigitte-de-Laval,Maxime Beland,Former Customer,0,,,non_trouve,2026-05-08,url_introuvable
+Mecanique J.M.A,Beauceville,Maxime Beland,Former Customer,0,,1,autousagee.ca,2026-05-08,url_introuvable
+Groupe Grand Portage FC,Rivière-du-Loup,Maxime Beland,Former Customer,0,https://fr.nissan.ca/dealer-locator/dealers/54190/quebec/riviere-du-loup/grand-portage-nissan,,non_trouve,2026-05-08,site:pw_err:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR
+Porsche Rive-Sud,Longueuil,Maxime Beland,Former Customer,0,https://dealer.porsche.com/ca/rivesud/fr-CA,,non_trouve,2026-05-08,site:not_found_js
+Demers Auto,Longueuil,Maxime Beland,Former Customer,0,https://www.autobody-review.com/shop/i53793/demers-auto-body-co,16,autousagee.ca,2026-05-08,site:not_found_js
+Audi Sherbrooke,Sherbrooke,Maxime Beland,Prospect,0,https://www.audisherbrooke.com/en/,,non_trouve,2026-05-08,site:not_found_js
+Tesla Quebec,Quebec,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Sept-Iles Hyundai,Sept-Îles,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Matane Hyundai,Matane,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Sept-Iles Kia,Sept-iles,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Kia Harold Auto,Chicoutimi,Maxime Beland,Prospect,0,https://www.kiaharold.ca/fr,42,static/inventaire,2026-05-08,
+Mazda Trois-Rivieres,Trois-Rivières,Maxime Beland,Prospect,0,https://www.mazdatroisrivieres.com,,non_trouve,2026-05-08,site:not_found_js
+Du Beau Toyota,Thetford Mines,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Nissan Trois-Rivieres,Trois-Rivières,Maxime Beland,Prospect,0,https://nissan.edenauto.com/,436,website_static_used_link,2026-05-08,
+St-Georges Nissan,Saint-georges,Maxime Beland,Prospect,0,https://www.nissan.ca/dealer-locator/dealers/53063/quebec/st-georges/st-georges-nissan,,non_trouve,2026-05-08,site:pw_err:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR
+Volkswagen Rimouski,Rimouski,Maxime Beland,Prospect,0,https://www.rimouskivw.ca/inventaire.html,48,website_static,2026-05-08,
+Audi de Quebec,Quebec,Maxime Beland,Prospect,0,https://www.audi.ca/fr/dealer-search/,,non_trouve,2026-05-08,site:not_found_js
+Donnacona Chrysler Dodge Jeep Ram Fiat,Donnacona,Maxime Beland,Prospect,0,https://donnaconachrysler.com/en/,,non_trouve,2026-05-08,site:not_found_js
+Bisson Chevrolet Buick GMC Inc,Thetford Mines,Maxime Beland,Prospect,0,https://thetford-mines-qc.findstorenearme.ca/car-dealer/,,non_trouve,2026-05-08,site:not_found_js
+Hyundai Trois-Rivieres,Trois-Rivières,Maxime Beland,Prospect,0,https://hyundaitroisrivieres.com/,,non_trouve,2026-05-08,site:not_found_js
+Cote-Nord Mitsubishi,Sept-iles,Maxime Beland,Prospect,0,,,non_trouve,2026-05-08,url_introuvable
+Paquin Volkswagen,Rouyn-Noranda,Lambros Karnahoritis,Prospect,0,https://volkswagen-canada.open-closed.net/rouyn-noranda-opening-hours-1005-av-lariviere/es,,non_trouve,2026-05-08,site:not_found_js
