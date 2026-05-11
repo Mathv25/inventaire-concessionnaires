@@ -84,6 +84,19 @@ SKIP_DOMAINS = {
     "forosecuador","genealogy.com","go.com","cadillacforums","stlevis.ca",
     "desjardins.ca","wn.com","massawa.com","sept.ca","mathews.ca",
     "ouellet.com","rimar.ca","domainnames.ca","worldnews","actu17",
+    # Sites européens / agrégateurs internationaux
+    "autoscout24","autoscout","lacentrale","leboncoin","caradisiac",
+    "largus","motortrend","automobile-magazine","autoplus","turbo.fr",
+    "paruvendu","vivastreet","annoncesauto","spoticar","aramisauto",
+    "mandataire","cardoen","autowereld","mobile.de","otomoto",
+    "hasznaltauto","bazarauto","olx.","trovit","mitula","nuroa",
+}
+
+# TLDs européens/internationaux à rejeter — tous les dealers sont au Québec
+SKIP_TLDS = {
+    ".fr",".be",".ch",".lu",".de",".at",".nl",".es",".it",".pt",
+    ".uk",".co.uk",".ie",".pl",".cz",".sk",".hu",".ro",".se",".no",
+    ".dk",".fi",".eu",".ru",".ua",".mx",".ar",".br",".au",".nz",
 }
 
 # Mots sur une page qui indiquent domaine parqué / fermé
@@ -240,6 +253,7 @@ def url_relevance_score(url, dealer_name, city):
     domain = get_domain(url)
 
     if any(s in domain for s in SKIP_DOMAINS): return -99
+    if any(domain.endswith(tld) for tld in SKIP_TLDS): return -99
     gov_signals = ["portail", ".gouv.", ".gc.ca", ".ville.", "ville-", "mairie", "municipal",
                    "forum","dictio","grammar","genealogy","worldnews","actualite"]
     if any(s in url_l for s in gov_signals): return -99
@@ -359,6 +373,8 @@ def try_url(url):
 
 def validate_url_content(url):
     domain = get_domain(url)
+    if any(domain.endswith(tld) for tld in SKIP_TLDS): return 'not_auto'
+    if any(s in domain for s in SKIP_DOMAINS): return 'not_auto'
 
     if any(brand in domain for brand in AUTO_BRANDS):
         try:
