@@ -71,7 +71,8 @@
         <th onclick="sortTable(4)" style="text-align:right">Inv. CRM <span class="arrow">↕</span></th>
         <th onclick="sortTable(5)" style="text-align:right">Inv. Scrapé <span class="arrow">↕</span></th>
         <th onclick="sortTable(6)">Source <span class="arrow">↕</span></th>
-        <th onclick="sortTable(7)">Date <span class="arrow">↕</span></th>
+        <th onclick="sortTable(7)">URL</th>
+        <th onclick="sortTable(8)">Date <span class="arrow">↕</span></th>
       </tr>
     </thead>
     <tbody id="tbody"></tbody>
@@ -143,6 +144,10 @@ function renderRows(rows) {
       ? `<span class="inv-num">${inv}</span>`
       : `<span class="inv-zero">—</span>`;
     const crm = r.Inventaire_CRM || "—";
+    const url = r.URL_trouvee || "";
+    const urlCell = url
+      ? `<a href="${url}" target="_blank" rel="noopener" style="color:#1a1a2e;font-size:0.78rem;word-break:break-all;">${url.replace(/^https?:\/\/(www\.)?/,'').split('/')[0]}</a>`
+      : `<span style="color:#bbb;font-size:0.78rem;">—</span>`;
     return `<tr>
       <td>${r.Concessionnaire || ""}</td>
       <td>${r.Ville || ""}</td>
@@ -151,6 +156,7 @@ function renderRows(rows) {
       <td style="text-align:right">${crm}</td>
       <td style="text-align:right">${invDisplay}</td>
       <td>${sourceBadge(r.Source)}</td>
+      <td>${urlCell}</td>
       <td>${r.Date_Scrape || ""}</td>
     </tr>`;
   }).join("");
@@ -173,7 +179,7 @@ function filterTable() {
   renderRows(filtered);
 }
 
-const COL_KEYS = ["Concessionnaire","Ville","Rep","Type","Inventaire_CRM","Inventaire_Scraped","Source","Date_Scrape"];
+const COL_KEYS = ["Concessionnaire","Ville","Rep","Type","Inventaire_CRM","Inventaire_Scraped","Source","URL_trouvee","Date_Scrape"];
 
 function sortRows(rows, col, asc) {
   const key = COL_KEYS[col];
