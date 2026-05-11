@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventaire Concessionnaires QC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f5; color: #222; }
+
+  header { background: #1a1a2e; color: #fff; padding: 20px 24px; }
+  header h1 { font-size: 1.3rem; font-weight: 600; }
+  header p  { font-size: 0.82rem; color: #aaa; margin-top: 2px; }
+
+  .stats { display: flex; gap: 12px; padding: 16px 24px; flex-wrap: wrap; }
+  .stat-box { background: #fff; border-radius: 8px; padding: 12px 18px; min-width: 120px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .stat-box .val { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; }
+  .stat-box .lbl { font-size: 0.72rem; color: #888; margin-top: 2px; }
+
+  .controls { display: flex; gap: 10px; padding: 0 24px 14px; flex-wrap: wrap; align-items: center; }
+  input[type=text] { padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.88rem; width: 260px; }
+  select { padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 0.88rem; background: #fff; }
+  .count-label { font-size: 0.82rem; color: #888; margin-left: auto; }
+
+  .table-wrap { overflow-x: auto; padding: 0 24px 40px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.08); font-size: 0.85rem; }
+  th { background: #1a1a2e; color: #fff; padding: 10px 12px; text-align: left; font-weight: 500; cursor: pointer; white-space: nowrap; user-select: none; }
+  th:hover { background: #2d2d4e; }
+  th .arrow { font-size: 0.7rem; margin-left: 4px; opacity: 0.6; }
+  td { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8f9ff; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 500; }
+  .badge-ok   { background: #d1fae5; color: #065f46; }
+  .badge-non  { background: #fee2e2; color: #991b1b; }
+  .badge-ferme{ background: #e5e7eb; color: #374151; }
+  .badge-auto { background: #dbeafe; color: #1e40af; }
+
+  .inv-num { font-weight: 600; color: #1a1a2e; }
+  .inv-zero { color: #bbb; }
+
+  #loading { text-align: center; padding: 60px; color: #888; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Inventaire Concessionnaires QC</h1>
+  <p id="last-update">Chargement...</p>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Rechercher concessionnaire, ville..." oninput="filterTable()">
+  <select id="filter-rep" onchange="filterTable()"><option value="">Tous les reps</option></select>
+  <select id="filter-source" onchange="filterTable()"><option value="">Toutes les sources</option></select>
+  <span class="count-label" id="count-label"></span>
+</div>
+
+<div class="table-wrap">
+  <div id="loading">Chargement des données...</div>
+  <table id="table" style="display:none">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Concessionnaire <span class="arrow">↕</span></th>
+        <th onclick="sortTable(1)">Ville <span class="arrow">↕</span></th>
+        <th onclick="sortTable(2)">Rep <span class="arrow">↕</span></th>
+        <th onclick="sortTable(3)">Type <span class="arrow">↕</span></th>
+        <th onclick="sortTable(4)" style="text-align:right">Inv. CRM <span class="arrow">↕</span></th>
+        <th onclick="sortTable(5)" style="text-align:right">Inv. Scrapé <span class="arrow">↕</span></th>
+        <th onclick="sortTable(6)">Source <span class="arrow">↕</span></th>
+        <th onclick="sortTable(7)">Date <span class="arrow">↕</span></th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<script>
+const CSV_URL = "https://raw.githubusercontent.com/Mathv25/inventaire-concessionnaires/main/output/results.csv";
+
+let allRows = [];
+let sortCol = -1, sortAsc = true;
+
+function parseCSV(text) {
+  const lines = text.trim().split("\n");
+  const headers = lines[0].split(",");
+  return lines.slice(1).map(line => {
+    const cols = [];
+    let cur = "", inQ = false;
+    for (let c of line) {
+      if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { cols.push(cur); cur = ""; }
+      else { cur += c; }
+    }
+    cols.push(cur);
+    const obj = {};
+    headers.forEach((h, i) => obj[h.trim()] = (cols[i] || "").trim());
+    return obj;
+  });
+}
+
+function sourceBadge(src) {
+  if (!src || src === "non_trouve") return '<span class="badge badge-non">Non trouvé</span>';
+  if (src === "FERMÉ") return '<span class="badge badge-ferme">Fermé</span>';
+  if (src === "autousagee.ca") return '<span class="badge badge-auto">autousagee.ca</span>';
+  return '<span class="badge badge-ok">Site</span>';
+}
+
+function renderStats(rows) {
+  const total   = rows.length;
+  const trouves = rows.filter(r => r.Inventaire_Scraped && r.Inventaire_Scraped !== "0").length;
+  const fermes  = rows.filter(r => r.Source === "FERMÉ").length;
+  const nonTrouves = rows.filter(r => r.Source === "non_trouve").length;
+  const totalInv = rows.reduce((s, r) => s + (parseInt(r.Inventaire_Scraped) || 0), 0);
+
+  document.getElementById("stats").innerHTML = `
+    <div class="stat-box"><div class="val">${total}</div><div class="lbl">Concessionnaires</div></div>
+    <div class="stat-box"><div class="val">${trouves}</div><div class="lbl">Inventaires trouvés</div></div>
+    <div class="stat-box"><div class="val">${totalInv.toLocaleString("fr-CA")}</div><div class="lbl">Véhicules usagés total</div></div>
+    <div class="stat-box"><div class="val">${fermes}</div><div class="lbl">Fermés</div></div>
+    <div class="stat-box"><div class="val">${nonTrouves}</div><div class="lbl">Non trouvés</div></div>
+  `;
+}
+
+function populateFilters(rows) {
+  const reps = [...new Set(rows.map(r => r.Rep).filter(Boolean))].sort();
+  const repSel = document.getElementById("filter-rep");
+  reps.forEach(r => { const o = document.createElement("option"); o.value = r; o.textContent = r; repSel.appendChild(o); });
+
+  const sources = [...new Set(rows.map(r => r.Source).filter(Boolean))].sort();
+  const srcSel = document.getElementById("filter-source");
+  sources.forEach(s => { const o = document.createElement("option"); o.value = s; o.textContent = s; srcSel.appendChild(o); });
+}
+
+function renderRows(rows) {
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = rows.map(r => {
+    const inv = parseInt(r.Inventaire_Scraped) || 0;
+    const invDisplay = inv > 0
+      ? `<span class="inv-num">${inv}</span>`
+      : `<span class="inv-zero">—</span>`;
+    const crm = r.Inventaire_CRM || "—";
+    return `<tr>
+      <td>${r.Concessionnaire || ""}</td>
+      <td>${r.Ville || ""}</td>
+      <td>${r.Rep || ""}</td>
+      <td>${r.Type || ""}</td>
+      <td style="text-align:right">${crm}</td>
+      <td style="text-align:right">${invDisplay}</td>
+      <td>${sourceBadge(r.Source)}</td>
+      <td>${r.Date_Scrape || ""}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("count-label").textContent = `${rows.length} concessionnaires`;
+}
+
+function filterTable() {
+  const q   = document.getElementById("search").value.toLowerCase();
+  const rep = document.getElementById("filter-rep").value;
+  const src = document.getElementById("filter-source").value;
+
+  let filtered = allRows.filter(r => {
+    const matchQ   = !q || (r.Concessionnaire + r.Ville).toLowerCase().includes(q);
+    const matchRep = !rep || r.Rep === rep;
+    const matchSrc = !src || r.Source === src;
+    return matchQ && matchRep && matchSrc;
+  });
+
+  if (sortCol >= 0) filtered = sortRows(filtered, sortCol, sortAsc);
+  renderRows(filtered);
+}
+
+const COL_KEYS = ["Concessionnaire","Ville","Rep","Type","Inventaire_CRM","Inventaire_Scraped","Source","Date_Scrape"];
+
+function sortRows(rows, col, asc) {
+  const key = COL_KEYS[col];
+  return [...rows].sort((a, b) => {
+    let va = a[key] || "", vb = b[key] || "";
+    if (col === 4 || col === 5) { va = parseFloat(va) || 0; vb = parseFloat(vb) || 0; }
+    if (va < vb) return asc ? -1 : 1;
+    if (va > vb) return asc ? 1 : -1;
+    return 0;
+  });
+}
+
+function sortTable(col) {
+  if (sortCol === col) sortAsc = !sortAsc;
+  else { sortCol = col; sortAsc = true; }
+  filterTable();
+}
+
+fetch(CSV_URL)
+  .then(r => r.text())
+  .then(text => {
+    allRows = parseCSV(text);
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("table").style.display = "table";
+    document.getElementById("last-update").textContent =
+      `Dernière mise à jour : ${allRows[allRows.length-1]?.Date_Scrape || "—"} · ${allRows.length} concessionnaires`;
+    renderStats(allRows);
+    populateFilters(allRows);
+    renderRows(allRows);
+  })
+  .catch(e => {
+    document.getElementById("loading").textContent = "Erreur de chargement : " + e.message;
+  });
+</script>
+</body>
+</html>
