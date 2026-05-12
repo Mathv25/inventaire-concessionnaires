@@ -272,14 +272,14 @@ def url_relevance_score(url, dealer_name, city):
     if unique_words:
         matches = sum(1 for w in unique_words if w in domain)
         if matches == 0:
-            # Aucun mot distinctif du nom dans le domaine → probablement pas le bon dealer
-            return -5
+            # Rejet absolu — le domaine ne contient aucun mot distinctif du nom du dealer
+            return -99
         score += matches * 3
     else:
-        # Nom 100% générique — on accepte si le domaine contient au moins un mot du nom
+        # Nom 100% générique — exiger au moins un mot du nom dans le domaine
         generic_match = sum(1 for w in dealer_words if w in domain)
         if generic_match == 0:
-            return -5
+            return -99
         score += generic_match
 
     if any(w in domain for w in city_words): score += 1
@@ -293,10 +293,11 @@ def url_relevance_score(url, dealer_name, city):
 def find_url_ddg(name, city):
     if not HAS_DDG: return None
 
+    # Requêtes avec nom + ville pour maximiser la précision
     queries = [
-        f'"{name}" {city} concessionnaire inventaire usagés',
-        f'{name} {city} véhicules occasion site:ca',
-        f'{name} {city} dealer automobile',
+        f'"{name}" "{city}"',
+        f'"{name}" {city} concessionnaire usagés',
+        f'{name} {city} véhicules occasion',
     ]
 
     best_score = 0
@@ -647,12 +648,17 @@ def process(dealer, output_csv):
     url = dealer.get("URL","").strip()
 
     if not url:
-        print("    Recherche URL DDG...")
+        print(f"    Recherche: \"{name}\" + \"{city}\"")
         url = find_url_ddg(name, city)
         if url:
             print(f"    URL DDG: {url}")
         else:
+            # Tenter des URLs construites à partir du nom — seulement si elles matchent le nom
             for guess in guess_urls(name, city):
+                domain = get_domain(guess)
+                score = url_relevance_score(guess, name, city)
+                if score < 0:
+                    continue  # Rejet — domaine ne contient pas le nom
                 if try_url(guess):
                     url = guess
                     print(f"    URL devinée: {url}")
