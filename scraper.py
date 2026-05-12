@@ -705,11 +705,16 @@ def process(dealer, output_csv):
             count, src, page_url = scrape_playwright(url)
 
         if count is not None:
-            print(f"    ✓ {count} véhicules ({src}) → {page_url}")
-            row["Inventaire_Scraped"] = count
-            row["Source"] = src
-            row["URL_trouvee"] = page_url  # URL de la page occasion, pas juste l'accueil
-            return row
+            # Sanity check — aucun dealer solo QC n'a plus de 300 usagés
+            if count > 300:
+                print(f"    ⚠ {count} rejeté (trop élevé — probablement faux positif)")
+                count = None
+            else:
+                print(f"    ✓ {count} véhicules ({src}) → {page_url}")
+                row["Inventaire_Scraped"] = count
+                row["Source"] = src
+                row["URL_trouvee"] = page_url
+                return row
 
         row["Notes"] = f"site:{src}"
     else:
