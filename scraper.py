@@ -436,6 +436,28 @@ def find_used_link(html, base_url):
     return best
 
 
+def _scrape_page(html, raw_html, page_url, label_suffix=""):
+    """
+    Tente d'extraire le compte de véhicules usagés d'une page.
+    Priorité: 1) cartes HTML  2) regex texte (restreint)
+    Retourne (count, source_label, page_url) ou (None, ..., page_url)
+    """
+    # 1. Compter les cartes de véhicules — méthode la plus fiable
+    n = count_vehicle_cards(raw_html)
+    if n:
+        return n, f"cards{label_suffix}", page_url
+
+    # 2. Regex sur le texte — patterns très ciblés seulement
+    soup = BeautifulSoup(raw_html, "html.parser")
+    for tag in soup(["script","style","noscript","header","footer","nav"]): tag.decompose()
+    text = soup.get_text(" \n", strip=True)
+    count = extract_count(text)
+    if count:
+        return count, f"static{label_suffix}", page_url
+
+    return None, f"not_found{label_suffix}", page_url
+
+
 def scrape_static(url):
     """Retourne (count, source_label, page_url)."""
     try:
@@ -444,12 +466,7 @@ def scrape_static(url):
         if r.status_code != 200:
             return None, f"HTTP {r.status_code}", url
 
-        soup = BeautifulSoup(r.text, "html.parser")
-        for tag in soup(["script","style","noscript"]): tag.decompose()
-        text = soup.get_text(" \n", strip=True)
-        count = extract_count(text)
-        if count: return count, "website_static", url
-
+        # Essayer d'abord le lien usagés dans le HTML
         used_link = find_used_link(r.text, url)
         if used_link and used_link != url:
             try:
@@ -457,13 +474,12 @@ def scrape_static(url):
                 r2 = requests.get(used_link, headers=HEADERS_HTTP, timeout=12,
                                   allow_redirects=True, verify=False)
                 if r2.status_code == 200:
-                    soup2 = BeautifulSoup(r2.text, "html.parser")
-                    for t in soup2(["script","style","noscript"]): t.decompose()
-                    count = extract_count(soup2.get_text(" \n", strip=True))
-                    if count: return count, "website_static_used_link", used_link
+                    count, src, pu = _scrape_page(None, r2.text, used_link, "_used_link")
+                    if count: return count, src, pu
             except Exception:
                 pass
 
+        # Probing des chemins usagés courants
         base = url.rstrip("/")
         for path in USED_PATHS:
             try:
@@ -472,17 +488,15 @@ def scrape_static(url):
                 r2 = requests.get(probe_url, headers=HEADERS_HTTP, timeout=10,
                                   allow_redirects=True, verify=False)
                 if r2.status_code == 200:
-                    soup2 = BeautifulSoup(r2.text, "html.parser")
-                    for t in soup2(["script","style","noscript"]): t.decompose()
-                    text2 = soup2.get_text(" \n", strip=True)
-                    count = extract_count(text2)
-                    if count: return count, f"static{path}", probe_url
-                    n = count_vehicle_cards(r2.text)
-                    if n: return n, f"static_cards{path}", probe_url
+                    count, src, pu = _scrape_page(None, r2.text, probe_url, path)
+                    if count: return count, src, pu
             except Exception:
                 pass
 
-        return None, "not_found_static", url
+        # Fallback: page d'accueil
+        count, src, pu = _scrape_page(None, r.text, url, "")
+        return count, src, pu
+
     except Exception as e:
         return None, str(e)[:60], url
 
