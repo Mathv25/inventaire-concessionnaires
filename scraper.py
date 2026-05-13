@@ -84,6 +84,11 @@ SKIP_DOMAINS = {
     "forosecuador","genealogy.com","go.com","cadillacforums","stlevis.ca",
     "desjardins.ca","wn.com","massawa.com","sept.ca","mathews.ca",
     "ouellet.com","rimar.ca","domainnames.ca","worldnews","actu17",
+    # Sites officiels de marques / réseaux mondiaux (pas des dealers locaux)
+    "ferraridealers","lamborghini.com","porsche.com","maserati.com",
+    "mercedes-benz.com","bmw.com","audi.com","toyota.com","honda.com",
+    "ford.com","gm.com","stellantis","hyundai.com","kia.com",
+    "nissancanada","toyota.ca","hondacanada",
     # Sites européens / agrégateurs internationaux
     "autoscout24","autoscout","lacentrale","leboncoin","caradisiac",
     "largus","motortrend","automobile-magazine","autoplus","turbo.fr",
