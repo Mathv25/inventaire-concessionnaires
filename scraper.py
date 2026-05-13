@@ -565,11 +565,22 @@ def scrape_playwright(url):
             html = page.content()
             browser.close()
 
+        # Vérifier que l'URL finale est bien une page d'inventaire usagé
+        # Si on est toujours sur la homepage, les cartes comptées incluent neufs + usagés
+        _used_url_kw = re.compile(
+            r"occasion|usag[ée]|pre.?owned|used|inventaire|inventory", re.I
+        )
+        on_used_page = bool(_used_url_kw.search(final_url))
+
         count = extract_count(text)
         if count: return count, "website_js", final_url
 
         n = count_vehicle_cards(html)
-        if n: return n, "website_js_cards", final_url
+        if n:
+            # Rejeter si on n'est PAS sur une page usagés — trop de faux positifs
+            if not on_used_page:
+                return None, "js_cards_homepage_skip", final_url
+            return n, "website_js_cards", final_url
 
         return None, "not_found_js", url
     except Exception as e:
