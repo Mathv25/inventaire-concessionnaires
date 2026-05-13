@@ -1,9 +1,6 @@
 name: Scraper Inventaire Concessionnaires
 
 on:
-  push:
-    paths:
-      - 'input/dealers.csv'
   workflow_dispatch:
     inputs:
       mode:
