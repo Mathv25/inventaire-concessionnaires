@@ -2,13 +2,13 @@ Concessionnaire,Ville,Rep,Type,Inventaire_CRM,URL_trouvee,Inventaire_Scraped,Sou
 Lévis Subaru,Levis,Maxime Beland,Former Customer,77,https://www.levissubaru.com,63,website_static,2026-05-06,
 Thibault Chevrolet Cadillac Buick GMC,Rouyn-noranda,Maxime Beland,Former Customer,51,https://www.thibaultchevrolet.com,56,website_static_used_link,2026-05-06,
 Gatineau Honda,Gatineau,Isabelle Ricard,Former Customer,50,https://www.gatineauhonda.com,49,website_static_used_link,2026-05-06,
-Gatineau Kia,Gatineau,Isabelle Ricard,Former Customer,41,,0,,2026-05-06,reset_v10_js_cards
+Gatineau Kia,Gatineau,Isabelle Ricard,Former Customer,41,https://www.gatineaukia.ca/occasion,180,cards_confirmed,2026-05-13,revalidated
 St-Raymond Toyota,Saint-raymond,Maxime Beland,Prospect,33,https://www.straymondtoyota.com/inventaire.html,33,website_static,2026-05-06,
 Honda New Richmond,New Richmond,Maxime Beland,Prospect,30,https://www.hondanewrichmond.com/occasion/recherche.html,40,website_static,2026-05-06,
 Kia Levis,Levis,Maxime Beland,Former Customer,30,https://www.kialevis.com,30,website_static,2026-05-06,
 Cliche Auto Ford,Vallée-Jonction,Maxime Beland,Former Customer,30,https://www.clicheauto.com/,33,website_static,2026-05-06,
 Desjardins Volkswagen,Québec,Maxime Beland,Former Customer,29,https://www.desjardinsvolkswagen.ca,46,website_static,2026-05-06,
-Pinard Ford,Sainte-Julienne,Maxime Beland,Prospect,29,,0,,2026-05-06,reset_v10_js_cards
+Pinard Ford,Sainte-Julienne,Maxime Beland,Prospect,29,https://pinardford.com/occasion,24,static_occasion,2026-05-13,revalidated
 St-Georges Toyota,Saint-Georges,Maxime Beland,Former Customer,26,https://www.stgeorgestoyota.ca/,26,website_static,2026-05-06,
 Carella Honda,Amos,Maxime Beland,Prospect,25,https://www.carellahonda.com,18,website_static,2026-05-06,
 Villeneuve Volvo,Matane,Maxime Beland,Prospect,23,https://www.villeneuvevolvo.ca,23,website_js,2026-05-06,
@@ -30,8 +30,8 @@ Belvedere Nissan Ste-Agathe,Sainte-Agathe-des-Monts,Isabelle Ricard,Prospect,0,h
 Lombardi Honda,Saint-leonard,Isabelle Ricard,Prospect,0,https://www.lombardihonda.com,56,website_static,2026-05-07,
 Sherbrooke Honda,Sherbrooke,Isabelle Ricard,Former Customer,0,https://www.sherbrookehonda.com,30,website_static,2026-05-07,
 Selection Auto Direct,Sainte-Rose,Isabelle Ricard,Former Customer,0,,0,,2026-05-07,reset_v10_js_cards
-Toyota Mont-Laurier,Mont-laurier,Isabelle Ricard,Prospect,0,,0,,2026-05-07,reset_v10_js_cards
-Infiniti Blainville,Blainville,Isabelle Ricard,Former Customer,0,,0,,2026-05-07,reset_v10_js_cards
+Toyota Mont-Laurier,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.toyotamontlaurier.com/occasion,33,static_occasion,2026-05-13,revalidated
+Infiniti Blainville,Blainville,Isabelle Ricard,Former Customer,0,https://www.infinitiblainville.com/occasion,204,cards_confirmed,2026-05-13,revalidated
 Groupe auto FB,Montréal-Est,Isabelle Ricard,Former Customer,0,https://www.automedia.ca/concessionnaires-automobiles-labc-de-la-pub-sur-le-web/,18,website_js,2026-05-07,
 Chambly Honda,Chambly,Isabelle Ricard,Former Customer,0,https://www.chamblyhonda.com,90,website_static,2026-05-07,
 Chomedey Hyundai,Laval,Isabelle Ricard,Former Customer,0,https://www.chomedeyhyundai.com,22,website_static/inventaire/search.html?used=1,2026-05-07,
@@ -41,14 +41,14 @@ Taddeo Auto Centre Certifie,Laval,Isabelle Ricard,Former Customer,0,https://www.
 Olivier Occasion Baie-Comeau,Baie-Comeau,Isabelle Ricard,Former Customer,0,https://www.olivierchryslerbaiecomeau.com/occasion/recherche.html,35,website_static,2026-05-07,
 Belvedere Nissan Mont-Laurier,Mont-Laurier,Isabelle Ricard,Former Customer,0,https://www.belvederenissan.com,2,website_static_used_link,2026-05-07,
 Auto Kent Inc.,Anjou,Isabelle Ricard,Former Customer,0,https://www.autokent.ca/,48,website_static,2026-05-07,
-Gareau Toyota,Val-d'or,Isabelle Ricard,Prospect,0,,0,,2026-05-07,reset_v10_js_cards
+Gareau Toyota,Val-d'or,Isabelle Ricard,Prospect,0,https://www.valdortoyota.ca/occasion,57,static_occasion,2026-05-13,revalidated
 Ste-Therese Toyota,Sainte-therese,Isabelle Ricard,Prospect,0,https://www.stetheresetoyota.com,10,website_static_used_link,2026-05-07,
 Performe Hyundai,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.performehyundai.com,81,website_static_used_link,2026-05-07,
 Performe Mazda,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.performemazda.com,81,website_static_used_link,2026-05-07,
 Val-d'Or Mazda Inc.,Val-d'Or,Isabelle Ricard,Prospect,0,https://www.valdormazda.com,17,website_static_used_link,2026-05-07,
 Amos Mazda,Amos,Isabelle Ricard,Prospect,0,https://paquinmazda.com/le-mazda-cx-70-2026,37,website_static_used_link,2026-05-07,
 Giroux Chrysler Dodge Jeep,Ste-agathe-des-monts,Isabelle Ricard,Prospect,0,https://www.girouxchrysler.com,31,website_static,2026-05-07,
-Clement Chrysler Dodge Ltd,Lorrainville,Isabelle Ricard,Prospect,0,https://www.clementchrysler.ca/fr/vehicules-usages,23,manual,2026-05-13,user_correction
+Clement Chrysler Dodge Ltd,Lorrainville,Isabelle Ricard,Prospect,0,https://www.clementchrysler.ca/fr/vehicules-usages,23,manual,2026-05-13,revalidated
 Val-D'Or Nissan Inc,Val-d'or,Isabelle Ricard,Prospect,0,https://www.valdornissan.com,14,website_static,2026-05-07,
 Joliette Nissan,Joliette,Isabelle Ricard,Prospect,0,https://www.joliettenissan.com,1,website_static_used_link,2026-05-07,
 Belvedere Nissan Saint-Jerome,Saint-jerome,Isabelle Ricard,Prospect,0,https://www.belvederenissan.com,2,website_static_used_link,2026-05-07,
@@ -100,7 +100,7 @@ Honda Casavant,Saint-hyacinthe,Walid Achour,Former Customer,0,https://www.hondac
 Hyundai Casavant,Saint-hyacinthe,Walid Achour,Prospect,0,https://www.hyundaicasavant.com/,7,website_static/inventaire/search.html?used=1,2026-05-07,
 Val Estrie Ford,Sherbrooke,Walid Achour,Prospect,0,https://www.valestrie.com/neufs/inventaire/recherche.html,76,website_static,2026-05-07,
 St-Hubert Toyota,Carignan,Walid Achour,Prospect,0,https://www.sthuberttoyota.com/inventaire.html,30,website_static,2026-05-07,
-Sherbrooke Toyota,Sherbrooke,Walid Achour,Former Customer,0,,0,,2026-05-07,reset_v10_js_cards
+Sherbrooke Toyota,Sherbrooke,Walid Achour,Former Customer,0,https://sherbrooketoyota.ca/occasion,76,static_occasion,2026-05-13,revalidated
 Megantic Mazda,Lac-Mégantic,Walid Achour,Prospect,0,https://www.meganticmazda.ca/,43,website_static,2026-05-07,
 Mercedes-Benz Granby,Granby,Walid Achour,Prospect,0,https://www.mercedes-benz-granby.ca,113,website_static,2026-05-07,
 Toyota Richmond,Richmond,Walid Achour,Prospect,0,https://www.toyotarichmond.ca,22,website_static_used_link,2026-05-07,
@@ -210,7 +210,7 @@ Decarie Jaguar,Montréal,Walid Achour,Prospect,0,https://www.decarie.com,41,webs
 Bentley Montreal,Montréal,Walid Achour,Prospect,0,https://www.bentleymontreal.com,45,website_static,2026-05-07,
 Hondashop,Montréal,Walid Achour,Prospect,0,https://www.hondashop.hu/,3,website_js_cards,2026-05-07,
 Granby Auto Bas Prix,Granby,Walid Achour,Prospect,0,https://hyundaigranby.com/occasion,37,website_static,2026-05-07,
-Auto Flash,St.-Hubert,Walid Achour,Former Customer,0,,0,,2026-05-07,reset_v10_js_cards
+Auto Flash,St.-Hubert,Walid Achour,Former Customer,0,https://www.autoflash.net/auto-usage-chevrolet-occasion-vendre/vehicles/used/,7,website_js,2026-05-13,revalidated
 Kia de Drummondville,Drummondville,Walid Achour,Prospect,0,https://www.kiadrummondville.com,24,website_static_used_link,2026-05-07,
 Hyundai Sherbrooke,Sherbrooke,Walid Achour,Prospect,0,https://www.hyundaisherbrooke.com,9,website_static/inventaire/search.html?used=1,2026-05-07,
 Norauto Nissan,Amos,Walid Achour,Prospect,0,https://www.norautonissan.com/fr/inventaire-occasion,7,website_static,2026-05-07,
@@ -443,7 +443,7 @@ Baie-Comeau Mazda,Baie-comeau,Maxime Beland,Prospect,0,https://baiecomeaumazda.c
 Volkswagen de L'Estrie,Sherbrooke,Maxime Beland,Prospect,0,https://volkswagen.auto-selection.com/,,non_trouve,2026-05-13,site:not_found_js
 Subaru Rive-Nord,Boisbriand,Isabelle Ricard,Former Customer,0,https://quebecsubaru.ca/trouver-un-concessionnaire/,,non_trouve,2026-05-13,site:not_found_js
 Financement Auto LB,Gatineau,Isabelle Ricard,Former Customer,0,,,non_trouve,2026-05-13,url_introuvable
-Des Sources Alfa Romeo,Dollard-des-Ormeaux,Isabelle Ricard,Prospect,0,,,non_trouve,2026-05-13,url_introuvable
+Des Sources Alfa Romeo,Dollard-des-Ormeaux,Isabelle Ricard,Prospect,0,https://www.dessourcesalfaromeo.com/vehicles/used/?view=grid&sc=used,283,website_js_cards,2026-05-13,revalidated
 Centre De La Traction Integrale,Drummondville,Walid Achour,Prospect,0,,,non_trouve,2026-05-13,url_introuvable
 Groupe Solution,Châteauguay,Walid Achour,Prospect,0,https://solutionmazda.com/occasion,125,static_used_link,2026-05-13,
 L'ami Junior Group,Chicoutimi,Maxime Beland,Prospect,0,https://www.lamijuniornissan.com/en/financing/,,FERMÉ,2026-05-13,site_parque
