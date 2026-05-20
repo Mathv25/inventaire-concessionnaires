@@ -119,7 +119,7 @@ Levis Mazda,Lévis,Maxime Beland,Former Customer,0,https://www.levismazda.com,44
 Trois-Rivieres Honda,Trois-rivieres,Maxime Beland,Former Customer,0,https://www.troisriviereshonda.com,53,website_static,2026-05-07,
 Option Subaru,Québec,Maxime Beland,Former Customer,0,https://optionsubaru.com/,48,website_static,2026-05-07,
 Laurier Mazda,Québec,Maxime Beland,Former Customer,0,https://www.lauriermazda.com,23,website_static,2026-05-07,
-Comme1neuf,Château-Richer,Maxime Beland,Former Customer,0,https://www.comme1neuf.com,220,website_js,2026-05-07,
+Comme1neuf,Château-Richer,Maxime Beland,Former Customer,0,https://www.comme1neuf.com/fr/occasion,75,website_js,2026-05-20,
 Groupe Veloce,Rivière-du-Loup,Maxime Beland,Prospect,0,https://www.groupeveloce.com,1,website_static_used_link,2026-05-07,
 Lallier Ste-Foy,Quebec,Maxime Beland,Prospect,0,https://www.lallierstefoy.com,56,website_static,2026-05-07,
 Mercedes-Benz Trois-Rivieres,Trois-Rivières,Maxime Beland,Prospect,0,https://www.mercedes-benz.ca,74,website_js_cards,2026-05-07,
@@ -314,7 +314,7 @@ Groupe Bernier Daigle,Granby,Walid Achour,Prospect,0,https://www.granbytoyota.ca
 St Bruno Nissan Incorporated,Saint-Basile-le-Grand,Walid Achour,Prospect,0,https://www.stbrunonissanmontreal.ca/,29,website_static_used_link,2026-05-08,
 Automobile Serge Caron,Salaberry-de-Valleyfield,Walid Achour,Prospect,0,http://sergecaronautomobiles.com/,,FERMÉ,2026-05-08,site_parque
 J N Auto Road Side,Cleveland,Walid Achour,Prospect,0,https://jnauto.com/a-propos/,,FERMÉ,2026-05-08,HTTP 404
-Pret Auto 60 Minutes,Montreal,Walid Achour,Former Customer,0,https://inventaire.pretauto60minutes.ca/,205,website_js,2026-05-08,
+Pret Auto 60 Minutes,Montreal,Walid Achour,Former Customer,0,https://inventaire.pretauto60minutes.ca/fr/occasion,12,website_js,2026-05-20,
 Seray Auto inc.,Chambly,Walid Achour,Prospect,0,https://www.seraychamblyhyundai.com/inventaire.html,16,website_static,2026-05-08,
 Deux Rives Chrysler Dodge Jeep,Sorel-Tracy,Walid Achour,Prospect,0,https://www.chrysler.ca/fr/concessionnaires/C4144,7,website_js_cards,2026-05-08,
 Elegance Leasing,Montreal,Walid Achour,Former Customer,0,,0,,2026-05-08,reset_v10_js_cards
@@ -439,7 +439,7 @@ Duclos Laval Chrysler,Laval,Maxime Beland,Former Customer,0,https://www.duclosch
 Duclos Chrysler Longueuil,Longueuil,Maxime Beland,Former Customer,0,https://www.ducloschryslerlongueuil.com/occasion/recherche.html,73,cards_used_link,2026-05-13,
 Duclos Chrysler Mercier,Mercier,Maxime Beland,Former Customer,0,https://www.ducloschryslermercier.com/occasion/recherche.html,73,cards_used_link,2026-05-13,
 Kia Gaspe,Gaspé,Maxime Beland,Prospect,0,https://kia.edenauto.com/voitures/occasion/,1,cards_used_link,2026-05-13,
-Baie-Comeau Mazda,Baie-comeau,Maxime Beland,Prospect,0,https://baiecomeaumazda.com/occasion,228,cards_used_link,2026-05-13,
+Baie-Comeau Mazda,Baie-comeau,Maxime Beland,Prospect,0,https://baiecomeaumazda.com/occasion,315,website_js,2026-05-20,
 Volkswagen de L'Estrie,Sherbrooke,Maxime Beland,Prospect,0,https://volkswagen.auto-selection.com/,,non_trouve,2026-05-13,site:not_found_js
 Subaru Rive-Nord,Boisbriand,Isabelle Ricard,Former Customer,0,https://quebecsubaru.ca/trouver-un-concessionnaire/,,non_trouve,2026-05-13,site:not_found_js
 Financement Auto LB,Gatineau,Isabelle Ricard,Former Customer,0,,,non_trouve,2026-05-13,url_introuvable

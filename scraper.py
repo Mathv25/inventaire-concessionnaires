@@ -183,10 +183,12 @@ def extract_count(text, require_used_context=False):
     """
     # Patterns avec contexte usagé explicite — priorité maximale
     used_patterns = [
+        r"(\d+)\s+v[ée]hicules?\s+d.occasion",        # "75 Véhicules d'occasion"
+        r"(\d+)\s+v[ée]hicules?\s+usag[ée]s?",        # "75 véhicules usagés"
         r"v[ée]hicules?\s+d.occasion\s*[\n\r]+\s*(\d+)",
-        r"d.occasion\s*[\n\r]+\s*(\d+)\b",
+        # ↓ négatif lookahead pour éviter "D'occasion\n220 000 km" → 220
+        r"d.occasion\s*[\n\r]+\s*(\d+)(?!\s*[\d ]{3,}|\s*km\b|\s*000\b)",
         r"(?:inventaire\s+(?:complet|usag[ée]s?|d.occasion)|occasion|usag[ée]s?)\s*\((\d+)\)",
-        r"(\d+)\s+v[ée]hicules?\s+d.occasion",
         r"\((\d+)\)\s*(?:v[ée]hicules?|usag[ée]s?|occasion)",
         r"(?:usag[ée]s?|occasion)\s+(\d+)\b(?!\d)",
         r"\b(\d+)\s+usag[ée]s?\b",
