@@ -175,8 +175,14 @@ def save_row(output_csv, row):
 
 # ── Extraction du nombre de véhicules d'occasion ──────────────────────────────
 
-def extract_count(text):
-    patterns = [
+def extract_count(text, require_used_context=False):
+    """
+    Extrait le nombre de véhicules d'occasion du texte.
+    Si require_used_context=True, n'accepte que les patterns qui mentionnent
+    explicitement occasion/usagé/used/pre-owned.
+    """
+    # Patterns avec contexte usagé explicite — priorité maximale
+    used_patterns = [
         r"v[ée]hicules?\s+d.occasion\s*[\n\r]+\s*(\d+)",
         r"d.occasion\s*[\n\r]+\s*(\d+)\b",
         r"(?:inventaire\s+(?:complet|usag[ée]s?|d.occasion)|occasion|usag[ée]s?)\s*\((\d+)\)",
@@ -184,17 +190,28 @@ def extract_count(text):
         r"\((\d+)\)\s*(?:v[ée]hicules?|usag[ée]s?|occasion)",
         r"(?:usag[ée]s?|occasion)\s+(\d+)\b(?!\d)",
         r"\b(\d+)\s+usag[ée]s?\b",
+        r"(\d+)\s+(?:pre.?owned|used\s+vehicle)",
+        r"(?:occasion|usag[ée])\s*\((\d+)\)",
+    ]
+    # Patterns génériques — utilisés seulement si require_used_context=False
+    generic_patterns = [
+        # Patterns SRP très courants sur les plateformes dealer canadiennes
+        r"(\d+)\s+[ée]l[ée]ments?\s+correspondants?",   # "58 éléments correspondants" (FR)
+        r"(\d+)\s+[Ii]tems?\s+[Mm]atching",              # "58 Items Matching" (EN)
+        r"(\d+)\s+[Mm]atching\s+[Ii]tems?",
+        r"(\d+)\s+[Rr]esults?\s+[Ff]ound",
+        r"(\d+)\s+[Vv]ehicles?\s+[Ff]ound",
+        r"[Ff]ound\s+(\d+)\s+[Vv]ehicles?",
         r"(\d+)\s+v[ée]hicules?\s+(?:disponibles?|correspondants?|trouv[ée]s?|en\s+inventaire)",
         r"(\d+)\s+r[ée]sultats?(?:\s+trouv[ée]s?)?",
-        r"(?:occasion|usag[ée])\s*\((\d+)\)",
         r"(?:of|de)\s+(\d+)\s+(?:vehicle|v[ée]hicule|result|r[ée]sultat)",
-        r"(\d+)\s+(?:pre.?owned|used\s+vehicle)",
         r"inventaire\s*:?\s*(\d+)",
         r"(\d+)\s+annonces?",
         r"showing\s+\d+[–\-]\d+\s+of\s+(\d+)",
         r"\d+\s+[àa]\s+\d+\s+de\s+(\d+)",
         r"total\s*:?\s*(\d+)\s*(?:v[ée]hicule|vehicle|résultat|result)?",
     ]
+    patterns = used_patterns if require_used_context else used_patterns + generic_patterns
     for p in patterns:
         m = re.search(p, text, re.IGNORECASE)
         if m:
@@ -205,7 +222,105 @@ def extract_count(text):
     return None
 
 
-def count_vehicle_cards(html):
+def _extract_count_from_json(data, depth=0):
+    """Cherche récursivement un compte de véhicules dans un objet JSON."""
+    if depth > 5:
+        return None
+    if isinstance(data, dict):
+        # Clés communes pour le total de résultats
+        for key in ["total", "totalCount", "count", "total_count", "nbResults",
+                    "nb_results", "totalResults", "total_results", "totalVehicles",
+                    "vehicleCount", "numFound", "hits", "size", "totalHits",
+                    "Total", "Count", "ResultCount", "ItemCount"]:
+            if key in data:
+                v = data[key]
+                if isinstance(v, (int, float)) and 1 <= int(v) <= 1000:
+                    return int(v)
+        # Chercher dans les valeurs
+        for k, v in data.items():
+            # Priorité aux clés liées aux véhicules
+            if any(kw in k.lower() for kw in ["vehicle", "inventory", "result", "listing", "item"]):
+                r = _extract_count_from_json(v, depth + 1)
+                if r:
+                    return r
+        for v in data.values():
+            r = _extract_count_from_json(v, depth + 1)
+            if r:
+                return r
+    elif isinstance(data, list):
+        # Une liste de véhicules — sa longueur est le compte
+        if len(data) >= 1 and isinstance(data[0], dict):
+            # Vérifier que les éléments ressemblent à des véhicules
+            first = data[0]
+            vehicle_keys = {"vin", "make", "model", "year", "price", "mileage",
+                           "marque", "modele", "annee", "kilometrage", "id", "vehicleId",
+                           "stockNumber", "condition", "type"}
+            if vehicle_keys & set(first.keys()):
+                return len(data)
+    return None
+
+
+def _extract_count_from_scripts(html):
+    """Parse les balises <script> pour trouver des données JSON d'inventaire.
+    Seulement pour des scripts qui contiennent des mots-clés liés à l'inventaire.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    # Mots-clés requis dans le script pour qu'il soit considéré comme inventaire
+    _INVENTORY_KW = re.compile(
+        r"vehicle|inventory|occasion|used|listing|catalogue|inventaire|"
+        r"vin|stockNumber|mileage|kilometrage|make|model",
+        re.IGNORECASE
+    )
+    # Patterns de variables JS qui contiennent l'inventaire
+    js_struct_patterns = [
+        r"window\.__(?:STORE|STATE|DATA|INITIAL_STATE|NEXT_DATA|APP_STATE)__\s*=\s*(\{.{200,}\});",
+        r"window\.(?:inventory|vehicles|listings|results)\s*=\s*(\[.{50,}\]);",
+        r"var\s+(?:inventory|vehicles|initialState|appData)\s*=\s*(\{.{100,}\});",
+    ]
+    # Patterns directs — exigent un contexte inventaire dans le même script
+    count_patterns = [
+        (r'"totalCount"\s*:\s*(\d+)', 2),   # (pattern, min_count)
+        (r'"totalResults"\s*:\s*(\d+)', 2),
+        (r'"numFound"\s*:\s*(\d+)', 2),
+        (r'"ResultCount"\s*:\s*(\d+)', 2),
+        (r'"total"\s*:\s*(\d+)', 3),         # "total" seul — min 3 pour éviter faux positifs
+        (r'"count"\s*:\s*(\d+)', 3),
+    ]
+    for script in soup.find_all("script"):
+        content = script.string or ""
+        if not content or len(content) < 100:
+            continue
+        # Le script doit parler de véhicules/inventaire
+        if not _INVENTORY_KW.search(content):
+            continue
+        # Essayer les patterns de comptage direct
+        for pat, min_count in count_patterns:
+            for m in re.finditer(pat, content, re.IGNORECASE):
+                try:
+                    n = int(m.group(1))
+                    if n >= min_count and not (1900 <= n <= 2030) and n <= 1000:
+                        return n
+                except (ValueError, IndexError):
+                    pass
+        # Essayer de parser du JSON structuré
+        for pat in js_struct_patterns:
+            m = re.search(pat, content, re.IGNORECASE | re.DOTALL)
+            if m:
+                try:
+                    data = json.loads(m.group(1))
+                    count = _extract_count_from_json(data)
+                    if count and count >= 2:
+                        return count
+                except (json.JSONDecodeError, IndexError):
+                    pass
+    return None
+
+
+def count_vehicle_cards(html, used_only=False):
+    """
+    Compte les cartes de véhicules dans le HTML.
+    Si used_only=True, ne compte que les cartes avec indicateur d'occasion/usagé.
+    """
     soup = BeautifulSoup(html, "html.parser")
     selectors = [
         "[class*='vehicle-card']", "[class*='inventory-item']",
@@ -223,11 +338,54 @@ def count_vehicle_cards(html):
     best = 0
     for sel in selectors:
         try:
-            n = len(soup.select(sel))
-            if n > best: best = n
+            cards = soup.select(sel)
+            n = len(cards)
+            if used_only and n > 0:
+                # Ne compter que les cartes qui mentionnent usagé/occasion/used
+                used_cards = [
+                    c for c in cards
+                    if re.search(r"usag[ée]|occasion|pre.?owned|used", c.get_text(), re.I)
+                    or re.search(r"usag[ée]|occasion|used", str(c.get("class","")) + str(c.get("data-condition","")), re.I)
+                ]
+                n = len(used_cards)
+            if n > best:
+                best = n
         except Exception:
             pass
     return best if 1 <= best <= 500 else None
+
+
+def _verify_used_page_content(text, html):
+    """
+    Vérifie que le contenu de la page correspond vraiment à des véhicules d'occasion
+    (pas tous les véhicules neuf+usagé confondus).
+    Retourne un score: >0 = page usagés probable, <0 = suspicion de page globale.
+    """
+    score = 0
+    text_l = text.lower()
+
+    # Signaux positifs — page clairement filtrée sur les usagés
+    used_signals = [
+        r"v[ée]hicules?\s+d.occasion", r"inventaire\s+d.occasion",
+        r"v[ée]hicules?\s+usag[ée]s?", r"inventaire\s+usag[ée]",
+        r"pre.?owned\s+vehicles?", r"used\s+vehicles?\s+inventory",
+        r"used\s+cars?\s+for\s+sale",
+    ]
+    for pat in used_signals:
+        if re.search(pat, text_l):
+            score += 2
+
+    # Signaux négatifs — page qui montre tout (neuf + usagé)
+    mixed_signals = [
+        r"v[ée]hicules?\s+neufs?", r"neuf\s+et\s+(?:usag[ée]|occasion)",
+        r"tous\s+les\s+v[ée]hicules?", r"inventaire\s+complet",
+        r"new\s+and\s+used", r"new\s+vehicles?\s+inventory",
+    ]
+    for pat in mixed_signals:
+        if re.search(pat, text_l):
+            score -= 1
+
+    return score
 
 
 # ── Validation du contenu auto ─────────────────────────────────────────────────
@@ -438,22 +596,38 @@ def find_used_link(html, base_url):
 
 def _scrape_page(html, raw_html, page_url, label_suffix=""):
     """
-    Tente d'extraire le compte de véhicules usagés d'une page.
-    Priorité: 1) cartes HTML  2) regex texte (restreint)
+    Tente d'extraire le compte de véhicules usagés d'une page statique.
+    Priorité: 1) JSON embarqué  2) regex texte contexte usagé  3) cartes HTML
     Retourne (count, source_label, page_url) ou (None, ..., page_url)
     """
-    # 1. Compter les cartes de véhicules — méthode la plus fiable
-    n = count_vehicle_cards(raw_html)
-    if n:
-        return n, f"cards{label_suffix}", page_url
+    is_used_url = bool(re.search(r"occasion|usag[ée]|pre.?owned|used|inventaire|inventory",
+                                  page_url, re.I))
 
-    # 2. Regex sur le texte — patterns très ciblés seulement
+    # 1. JSON embarqué dans <script> — très fiable
+    script_count = _extract_count_from_scripts(raw_html)
+    if script_count and is_used_url:
+        return script_count, f"script_json{label_suffix}", page_url
+
     soup = BeautifulSoup(raw_html, "html.parser")
     for tag in soup(["script","style","noscript","header","footer","nav"]): tag.decompose()
     text = soup.get_text(" \n", strip=True)
-    count = extract_count(text)
+
+    # 2. Regex texte avec contexte usagé explicite
+    count = extract_count(text, require_used_context=True)
     if count:
-        return count, f"static{label_suffix}", page_url
+        return count, f"static_used{label_suffix}", page_url
+
+    # 3. Cartes HTML — seulement si URL est une page usagés
+    if is_used_url:
+        n = count_vehicle_cards(raw_html, used_only=False)
+        if n and n <= 150:
+            return n, f"cards{label_suffix}", page_url
+
+    # 4. Regex générique — seulement si URL est clairement une page usagés
+    if is_used_url:
+        count = extract_count(text, require_used_context=False)
+        if count:
+            return count, f"static{label_suffix}", page_url
 
     return None, f"not_found{label_suffix}", page_url
 
@@ -501,9 +675,52 @@ def scrape_static(url):
         return None, str(e)[:60], url
 
 
+def _sum_body_type_counts(text):
+    """
+    Somme les comptes de types de carrosserie dans le sidebar du SRP.
+    Ex: "Convertible (1) Minivan (6) SUV (38)" → 58
+    Utile quand le total n'est pas affiché explicitement.
+    """
+    body_types = re.findall(
+        r'(?:Convertible|Minivan|Sedan|SUV|Truck|Coupe|Hatchback|Wagon|Other|'
+        r'Crossover|Pickup|Cabriolet|Camion|Familiale|Berline|Utilitaire|Fourgonnette)'
+        r'\s*\((\d+)\)',
+        text, re.IGNORECASE
+    )
+    if len(body_types) >= 2:  # Au moins 2 types pour éviter les faux positifs
+        total = sum(int(n) for n in body_types)
+        if 2 <= total <= 500:
+            return total
+    return None
+
+
 def scrape_playwright(url):
     """Retourne (count, source_label, page_url)."""
     if not HAS_PLAYWRIGHT: return None, "playwright_unavailable", url
+
+    intercepted_counts = []  # (count, api_url) capturés depuis les réponses réseau
+
+    def _handle_response(response):
+        try:
+            if response.status != 200:
+                return
+            ct = response.headers.get("content-type", "")
+            if "json" not in ct:
+                return
+            resp_url = response.url.lower()
+            # Ne s'intéresser qu'aux URLs qui ressemblent à de l'inventaire
+            if not any(k in resp_url for k in [
+                "vehicle", "inventory", "occasion", "used", "search",
+                "listing", "stock", "catalogue", "inventaire", "vehicul"
+            ]):
+                return
+            data = response.json()
+            count = _extract_count_from_json(data)
+            if count and 1 <= count <= 1000:
+                intercepted_counts.append((count, response.url))
+        except Exception:
+            pass
+
     try:
         with sync_playwright() as pw:
             browser = pw.chromium.launch(
@@ -520,69 +737,148 @@ def scrape_playwright(url):
             page.add_init_script(
                 "Object.defineProperty(navigator,'webdriver',{get:()=>undefined})"
             )
+            page.on("response", _handle_response)
 
+            # Trouver l'URL de la page usagés via scraping statique d'abord
             used_url = url
             try:
                 r_static = requests.get(url, headers=HEADERS_HTTP, timeout=10, verify=False)
                 link = find_used_link(r_static.text, url)
-                if link: used_url = link
+                if link:
+                    used_url = link
             except Exception:
                 pass
 
-            try:
-                page.goto(used_url, wait_until="networkidle", timeout=30000)
-            except Exception:
-                page.goto(used_url, wait_until="domcontentloaded", timeout=25000)
-            time.sleep(3.0)
-
-            final_url = page.url  # URL réelle après navigation
-
+            # Si pas trouvé statiquement, essayer les chemins courants
             if used_url == url:
-                for selector in [
-                    'a:text-matches("usagé", "i")',
-                    "a:text-matches(\"d'occasion\", \"i\")",
-                    'a:text-matches("occasion", "i")',
-                    'a:text-matches("used", "i")',
-                    'a:text-matches("pre-owned", "i")',
-                ]:
+                base = url.rstrip("/")
+                # Tenter les chemins les plus spécifiques en premier
+                priority_paths = [
+                    "/fr/vehicules-usages", "/fr/vehicules-occasion", "/fr/occasion",
+                    "/fr/inventaire/usages", "/vehicules-occasion", "/vehicules-usages",
+                    "/occasion", "/inventory/used", "/pre-owned", "/used-vehicles",
+                    "/used", "/pre-owned-vehicles",
+                ]
+                for path in priority_paths:
                     try:
-                        link = page.locator(selector).first
-                        if link.count() > 0:
-                            href = link.get_attribute("href")
-                            if href and not re.search(r"neuf|new|demo", href, re.I):
-                                target = href if href.startswith("http") else url.rstrip("/")+href
-                                try:
-                                    page.goto(target, wait_until="networkidle", timeout=20000)
-                                except Exception:
-                                    page.goto(target, wait_until="domcontentloaded", timeout=20000)
-                                time.sleep(2.5)
-                                final_url = page.url
-                                break
+                        probe = base + path
+                        r2 = requests.head(probe, headers=HEADERS_HTTP, timeout=6,
+                                           allow_redirects=True, verify=False)
+                        if r2.status_code == 200:
+                            used_url = probe
+                            break
                     except Exception:
                         pass
 
-            text = page.inner_text("body")
-            html = page.content()
+            try:
+                page.goto(used_url, wait_until="networkidle", timeout=35000)
+            except Exception:
+                try:
+                    page.goto(used_url, wait_until="domcontentloaded", timeout=25000)
+                except Exception:
+                    pass
+            time.sleep(3.5)
+
+            final_url = page.url
+
+            # Si on est encore sur la homepage, chercher et cliquer sur le lien usagés
+            _used_url_kw = re.compile(
+                r"occasion|usag[ée]|pre.?owned|used|inventaire|inventory", re.I
+            )
+            if not _used_url_kw.search(final_url):
+                for selector in [
+                    'a:text-matches("usag", "i")',
+                    "a:text-matches(\"occasion\", \"i\")",
+                    'a:text-matches("used", "i")',
+                    'a:text-matches("pre-owned", "i")',
+                    'a:text-matches("pre owned", "i")',
+                ]:
+                    try:
+                        links = page.locator(selector).all()
+                        for lnk in links:
+                            href = lnk.get_attribute("href") or ""
+                            if re.search(r"neuf|new|demo|command|order|specials?", href, re.I):
+                                continue
+                            target = href if href.startswith("http") else url.rstrip("/") + href
+                            if not target:
+                                continue
+                            intercepted_counts.clear()  # reset pour la nouvelle navigation
+                            try:
+                                page.goto(target, wait_until="networkidle", timeout=25000)
+                            except Exception:
+                                try:
+                                    page.goto(target, wait_until="domcontentloaded", timeout=20000)
+                                except Exception:
+                                    pass
+                            time.sleep(2.5)
+                            final_url = page.url
+                            if _used_url_kw.search(final_url):
+                                break
+                        if _used_url_kw.search(final_url):
+                            break
+                    except Exception:
+                        pass
+
+            page_text = page.inner_text("body")
+            page_html = page.content()
             browser.close()
 
-        # Vérifier que l'URL finale est bien une page d'inventaire usagé
-        # Si on est toujours sur la homepage, les cartes comptées incluent neufs + usagés
-        _used_url_kw = re.compile(
-            r"occasion|usag[ée]|pre.?owned|used|inventaire|inventory", re.I
-        )
         on_used_page = bool(_used_url_kw.search(final_url))
+        content_score = _verify_used_page_content(page_text, page_html)
 
-        count = extract_count(text)
-        if count: return count, "website_js", final_url
+        # ── Priorité 1: Réponses API interceptées (si page usagés) ───────────────
+        api_count = None
+        if intercepted_counts and (on_used_page or content_score > 0):
+            intercepted_counts.sort(key=lambda x: x[0])
+            api_count, best_api_url = intercepted_counts[0]
+            print(f"    [API] Compte intercepté: {api_count} depuis {best_api_url[:80]}")
 
-        n = count_vehicle_cards(html)
-        if n:
-            # Rejeter si on n'est PAS sur une page usagés — trop de faux positifs
-            if not on_used_page:
-                return None, "js_cards_homepage_skip", final_url
-            return n, "website_js_cards", final_url
+        # ── Priorité 2: Regex sur le texte — contexte usagé explicite ────────────
+        count = extract_count(page_text, require_used_context=True)
+        if count:
+            return count, "website_js_text", final_url
+
+        # ── Priorité 3: Regex générique (Items Matching, éléments correspondants…)
+        #    Si on est sur une page inventaire, le SRP count est fiable
+        if on_used_page or content_score > 0:
+            count = extract_count(page_text, require_used_context=False)
+            if count:
+                return count, "website_js", final_url
+
+        # ── Priorité 4: Somme des body types dans le sidebar ─────────────────────
+        body_type_total = _sum_body_type_counts(page_text)
+        if body_type_total and (on_used_page or content_score > 0):
+            print(f"    [BodyTypes] Somme: {body_type_total}")
+            return body_type_total, "website_js_body_sum", final_url
+
+        # ── Priorité 5: JSON embarqué dans les balises <script> ──────────────────
+        script_count = _extract_count_from_scripts(page_html)
+        if script_count and (on_used_page or content_score > 0):
+            print(f"    [Script JSON] Compte trouvé: {script_count}")
+            # Cross-valider avec API si disponible
+            if api_count and abs(script_count - api_count) / max(api_count, 1) > 0.5:
+                print(f"    [CV] Script={script_count} vs API={api_count} — préfère API")
+                return api_count, "api_intercepted", final_url
+            return script_count, "script_json", final_url
+
+        # ── Priorité 6: Retourner API intercepté si disponible ───────────────────
+        if api_count:
+            return api_count, "api_intercepted", final_url
+
+        # ── Priorité 7: Cartes HTML — seulement si page usagés confirmée ─────────
+        if on_used_page and content_score >= 0:
+            n = count_vehicle_cards(page_html, used_only=True)
+            if n:
+                return n, "website_js_used_cards", final_url
+            if content_score > 0:
+                n = count_vehicle_cards(page_html, used_only=False)
+                if n and n <= 150:
+                    return n, "website_js_cards", final_url
+                if n:
+                    print(f"    ⚠ {n} cartes — trop élevé, suspect")
 
         return None, "not_found_js", url
+
     except Exception as e:
         return None, f"pw_err:{str(e)[:40]}", url
 
