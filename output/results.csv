@@ -280,7 +280,7 @@ Les Automobiles M Rocheleau Inc,Cowansville,Walid Achour,Prospect,0,https://fr.n
 Hyundai Cowansville,Cowansville,Walid Achour,Prospect,0,https://www.kiacowansville.com/auto-usage/,16,cards_used_link,2026-05-20,
 Courtier Auto Laval,Montréal,Walid Achour,Former Customer,0,https://autolaval.ca/fr/inventaire,31,cards_used_link,2026-05-20,
 Acces Toyota,Rouyn-Noranda,Walid Achour,Prospect,0,https://www.accestoyota.ca/fr/inventaire-occasion/fr/inventaire-occasion,36,website_js,2026-05-20,
-Formule Ford,Granby,Walid Achour,Prospect,0,https://fordgranby.com/inventaire-neuf/inventaire/search.html?used=1,130,static/inventaire/search.html?used=1,2026-05-20,
+Formule Ford,Granby,Walid Achour,Prospect,0,https://fordgranby.com/occasion,28,website_js,2026-05-20,
 Poirier Ford Inc,Sorel-tracy,Walid Achour,Prospect,0,https://www.sorel-tracyford.ca/occasion/recherche.html,1,static_used,2026-05-20,
 Nissan Saint-Hyacinthe,Saint-Hyacinthe,Walid Achour,Prospect,0,https://www.nissansthyacinthe.com/auto-usage/,30,cards_used_link,2026-05-20,
 Kia Megantic,Lac-megantic,Walid Achour,Prospect,0,https://www.audetkiamegantic.com/used/Kia-Soul.html,,FERMÉ,2026-05-07,site_parque
@@ -336,31 +336,31 @@ Eric Auto,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.ericauto.
 Pro-Occasion Inc,Montréal,Isabelle Ricard,Former Customer,0,,1,autousagee.ca,2026-05-08,url_introuvable
 John Scotti Lamborghini Montreal,Kirkland,Isabelle Ricard,Prospect,0,https://lamborghinimontreal.com/occasion,18,static_used_link,2026-05-20,
 Automobiles J L,Sherbrooke,Walid Achour,Prospect,0,https://sherbrooketoyota.ca/occasion,73,static_used_link,2026-05-20,
-Granby Chevrolet Cadillac Buick GMC,Granby,Walid Achour,Former Customer,0,https://www.granbycadillac.com/en,10,static_cards/inventory/used,2026-05-08,
-Les Automobiles Fc,Saint-Pie,Walid Achour,Prospect,0,https://www.automobilesfc.com/,32,website_js,2026-05-08,
+Granby Chevrolet Cadillac Buick GMC,Granby,Walid Achour,Former Customer,0,https://www.granbycadillac.com/en/inventory/used,10,cards/inventory/used,2026-05-20,
+Les Automobiles Fc,Saint-Pie,Walid Achour,Prospect,0,https://www.automobilesfc.com/vehicule-usage/hyundai-kona-2023/5098802/,32,website_js,2026-05-20,
 Automobiles Denis Rousse,Salaberry-de-Valleyfield,Walid Achour,Prospect,0,https://www.automobilesdenisrousse.com/inventaire/,23,autousagee.ca,2026-05-08,site:not_found_js
 Denis Auclair autos Inc.,Granby,Walid Achour,Prospect,0,https://www.denis-yves-auclair-autos.com/,3,autousagee.ca,2026-05-08,site:not_found_js
 Occasion Circuit,Granby,Walid Achour,Prospect,0,https://www.occasioncircuit.ca,23,autousagee.ca,2026-05-08,site:not_found_js
 Gestion MMF,Saint-Jean-sur-Richelieu,Walid Achour,Prospect,0,https://www.groupegestion.ca,,FERMÉ,2026-05-08,site_parque
 Occasion Sans Limite,Ascot Corner,Walid Achour,Prospect,0,https://www.occasionsanslimite.com/termes-et-conditions/,11,autousagee.ca,2026-05-08,site:not_found_js
 Autorama Drummond,Drummondville,Walid Achour,Prospect,0,https://www.autoramadrummond.ca/,47,autousagee.ca,2026-05-08,site:not_found_js
-Brossard Cadillac,Brossard,Walid Achour,Prospect,0,https://www.brossardcadillac.ca/fr/inventaire-occasion,14,website_static,2026-05-08,
-Morand Ford Lincoln,Saint-Constant,Walid Achour,Prospect,0,https://www.morandlincoln.com/fr,2,website_static_used_link,2026-05-08,
+Brossard Cadillac,Brossard,Walid Achour,Prospect,0,https://www.brossardcadillac.ca/fr/inventaire-occasion/inventory/used,14,static_used/inventory/used,2026-05-20,
+Morand Ford Lincoln,Saint-Constant,Walid Achour,Prospect,0,https://www.morandlincoln.com/fr/fr/inventaire-occasion,12,static_used_link,2026-05-20,
 Autos En Gros,Saint-Sulpice,Walid Achour,Former Customer,0,https://www.autosengros.ca/inventaire/,142,autousagee.ca,2026-05-08,site:not_found_js
 Vroom Auto,Montreal,Walid Achour,Prospect,0,https://autovroom.ca/search/,70,manual,2026-05-13,manual_override
 Automobiles de la Capitale,Château-Richer,Maxime Beland,Former Customer,0,,23,autousagee.ca,2026-05-08,url_introuvable
 Mecanique J.M.A,Beauceville,Maxime Beland,Former Customer,0,,1,autousagee.ca,2026-05-08,url_introuvable
-Kia Harold Auto,Chicoutimi,Maxime Beland,Prospect,0,https://www.kiaharold.ca/fr,42,static/inventaire,2026-05-08,
-Volkswagen Rimouski,Rimouski,Maxime Beland,Prospect,0,https://www.rimouskivw.ca/inventaire.html,48,website_static,2026-05-08,
+Kia Harold Auto,Chicoutimi,Maxime Beland,Prospect,0,https://www.kiaharold.ca/fr/inventaire,36,static_used/inventaire,2026-05-20,
+Volkswagen Rimouski,Rimouski,Maxime Beland,Prospect,0,https://www.rimouskivw.ca/inventaire.html,8,static_used,2026-05-20,
 Longueuil Toyota,Longueuil,Isabelle Ricard,Prospect,0,https://www.longueuiltoyota.ca/fr/inventaire-occasion,48,manual,2026-05-13,manual_override
 Occasion Beaucage St-Hyacinthe,St-Hyacinthe,Walid Achour,Prospect,0,https://www.occasionbeaucage.com/nos-concessions/,,FERMÉ,2026-05-11,site_parque
 Magog Hyundai,Magog,Walid Achour,Prospect,0,https://www.magoghyundai.com/fr/inventaire-occasion,34,manual,2026-05-13,manual_override
 Auto Star,Saint-Eustache,Isabelle Ricard,Prospect,0,https://www.lesvehiculesautostar.com/index.php?action=view&id=61,6,autousagee.ca,2026-05-11,site:not_found_js
 Auto Action Inc.,Saint-François-du-Lac,Walid Achour,Former Customer,0,,15,autousagee.ca,2026-05-11,url_introuvable
 JD auto.ca,Scott,Maxime Beland,Prospect,26,https://jdauto.ca/vehicule-usage/harley-davidson-flhtcu-2014/5115574/,28,website_js,2026-05-11,
-L Gervais Autos Incorporated,Berthierville,Isabelle Ricard,Prospect,0,https://www.lgervaisautos.ca/inventaire,25,static/inventaire,2026-05-11,
-Les Sommets Chevrolet Buick GMC,Mont-tremblant,Isabelle Ricard,Prospect,0,https://www.sommetschev.ca/fr/fr/inventaire-occasion,11,website_static_used_link,2026-05-11,
-Volkswagen Popular Automobiles,Montreal,Walid Achour,Prospect,0,https://www.popularvw.com/fr/inventaire-occasion,16,website_static,2026-05-11,
+L Gervais Autos Incorporated,Berthierville,Isabelle Ricard,Prospect,0,https://www.lgervaisautos.ca/inventaire/inventaire,25,static/inventaire,2026-05-20,
+Les Sommets Chevrolet Buick GMC,Mont-tremblant,Isabelle Ricard,Prospect,0,https://www.sommetschev.ca/fr/fr/inventaire-occasion/fr/inventaire-occasion,3,cards_used_link,2026-05-20,
+Volkswagen Popular Automobiles,Montreal,Walid Achour,Prospect,0,https://www.popularvw.com/fr/inventaire-occasion/en/used-inventory/,12,cards_used_link,2026-05-20,
 St-Hyacinthe Mitsubishi,Saint-hyacinthe,Walid Achour,Prospect,0,https://www.st-hyacinthemitsubishi.ca/occasion/calculatrice-pret-auto.html,5,website_static_used_link,2026-05-11,
 Pierre Lefebvre Toyota,Sorel-tracy,Walid Achour,Prospect,0,https://www.lefebvre-toyota.ca/occasion/recherche.html,30,website_static,2026-05-11,
 Le Prix Duclos,Mercier,Maxime Beland,Former Customer,0,https://www.ducloschryslermercier.com/,148,website_static,2026-05-11,
