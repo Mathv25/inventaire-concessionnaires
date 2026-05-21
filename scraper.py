@@ -19,6 +19,7 @@ Format CSV d'entrée attendu (colonnes minimales):
 
 import csv, json, os, re, sys, time, random, unicodedata
 from datetime import datetime
+from urllib.parse import urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -580,6 +581,17 @@ def validate_url_content(url):
 
 # ── Scraping ───────────────────────────────────────────────────────────────────
 
+_NON_INVENTORY_PATHS = re.compile(
+    r"calculatrice|pret.?auto|loan|calculator|financement|financing|"
+    r"article|blog|guide|news|actualite|promotions?|specials?|offres?|"
+    r"contact|about|carrieres?|careers?|emplois?|departement|service|"
+    r"pieces|parts|accessoires|entretien|maintenance|rappels?|recall|"
+    r"comparatif|reviews?|galerie|gallery|carte|map|localisation|"
+    r"assurance|insurance|protection|garantie.?extended",
+    re.I,
+)
+
+
 def find_used_link(html, base_url):
     soup = BeautifulSoup(html, "html.parser")
     best = None
@@ -587,7 +599,10 @@ def find_used_link(html, base_url):
         href = a["href"].strip()
         text = a.get_text(strip=True).lower()
         if re.search(r"occasion|usag[ée]|pre.?owned|used", href + " " + text, re.I):
+            # Rejeter les liens qui ne sont pas des pages d'inventaire
             if re.search(r"neuf|new|demo|demonst|specials?|incentive", href + " " + text, re.I):
+                continue
+            if _NON_INVENTORY_PATHS.search(href):
                 continue
             if href.startswith("http"):
                 best = href; break
@@ -655,8 +670,9 @@ def scrape_static(url):
             except Exception:
                 pass
 
-        # Probing des chemins usagés courants
-        base = url.rstrip("/")
+        # Probing des chemins usagés courants — depuis la racine du domaine
+        parsed = urlparse(url)
+        base = f"{parsed.scheme}://{parsed.netloc}"
         for path in USED_PATHS:
             try:
                 quick()
@@ -751,9 +767,10 @@ def scrape_playwright(url):
             except Exception:
                 pass
 
-            # Si pas trouvé statiquement, essayer les chemins courants
+            # Si pas trouvé statiquement, essayer les chemins courants depuis la racine du domaine
             if used_url == url:
-                base = url.rstrip("/")
+                _p = urlparse(url)
+                base = f"{_p.scheme}://{_p.netloc}"
                 # Tenter les chemins les plus spécifiques en premier
                 priority_paths = [
                     "/fr/vehicules-usages", "/fr/vehicules-occasion", "/fr/occasion",
