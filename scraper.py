@@ -117,18 +117,21 @@ PARKED_SIGNALS = [
 
 # Chemins usagés à tenter
 USED_PATHS = [
-    "/inventaire/search.html?used=1",
-    "/vehicules-occasion", "/vehicules-usages", "/usages",
-    "/occasion", "/inventaire/usages", "/inventaire/occasion",
+    # Pages les plus explicitement "occasion" en premier
+    "/occasion", "/fr/occasion",
+    "/vehicules-occasion", "/fr/vehicules-occasion",
+    "/vehicules-usages", "/fr/vehicules-usages",
+    "/usages", "/fr/usages",
+    "/inventaire/usages", "/inventaire/occasion",
+    "/fr/inventaire/usages", "/fr/inventaire/occasion",
     "/inventory/used", "/pre-owned", "/pre-owned-vehicles",
     "/used", "/used-vehicles", "/used-cars",
-    "/voitures-occasion", "/search?condition=used",
-    "/inventaire", "/inventory",
-    "/fr/occasion", "/fr/inventaire", "/fr/vehicules-usages",
-    "/fr/vehicules-occasion", "/fr/usages", "/fr/inventaire/usages",
-    "/fr/inventaire/occasion", "/fr/voitures-usagees",
-    "/en/used", "/en/inventory", "/en/used-vehicles",
-    "/en/pre-owned", "/en/pre-owned-vehicles",
+    "/voitures-occasion", "/fr/voitures-usagees",
+    "/en/used", "/en/used-vehicles", "/en/pre-owned", "/en/pre-owned-vehicles",
+    "/search?condition=used",
+    # En dernier recours — peuvent retourner tous les véhicules
+    "/inventaire", "/inventory", "/fr/inventaire", "/en/inventory",
+    "/inventaire/search.html?used=1",
 ]
 
 # ── Utilitaires ────────────────────────────────────────────────────────────────
@@ -657,7 +660,17 @@ def scrape_static(url):
         if r.status_code != 200:
             return None, f"HTTP {r.status_code}", url
 
-        # Essayer d'abord le lien usagés dans le HTML
+        # ── 1. Extraire directement depuis l'URL reçue si c'est déjà une page usagés ──
+        is_already_used = bool(re.search(
+            r"occasion|usag[ée]|pre.?owned|used|inventory/used|vehicule.*used",
+            url, re.I
+        ))
+        if is_already_used:
+            count, src, pu = _scrape_page(None, r.text, url, "")
+            if count:
+                return count, src, pu
+
+        # ── 2. Chercher un lien usagés dans le HTML ────────────────────────────────────
         used_link = find_used_link(r.text, url)
         if used_link and used_link != url:
             try:
@@ -670,13 +683,16 @@ def scrape_static(url):
             except Exception:
                 pass
 
-        # Probing des chemins usagés courants — depuis la racine du domaine
+        # ── 3. Probing des chemins usagés depuis la racine du domaine ─────────────────
+        #    Seulement si l'URL reçue n'est pas déjà une page usagés spécifique
         parsed = urlparse(url)
         base = f"{parsed.scheme}://{parsed.netloc}"
         for path in USED_PATHS:
             try:
-                quick()
                 probe_url = base + path
+                if probe_url == url:
+                    continue  # déjà essayé en étape 1
+                quick()
                 r2 = requests.get(probe_url, headers=HEADERS_HTTP, timeout=10,
                                   allow_redirects=True, verify=False)
                 if r2.status_code == 200:
@@ -685,7 +701,7 @@ def scrape_static(url):
             except Exception:
                 pass
 
-        # Fallback: page d'accueil
+        # ── 4. Fallback: page reçue même si pas identifiée comme usagés ──────────────
         count, src, pu = _scrape_page(None, r.text, url, "")
         return count, src, pu
 
