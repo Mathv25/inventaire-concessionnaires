@@ -2,7 +2,7 @@
 """
 Revalidation complète — repart du domaine de base pour chaque dealer.
 Redécouvre la vraie page d'occasion via find_used_link + Playwright.
-Conserve: FERMÉ, non_trouve, manual, autousagee.ca
+Conserve: FERMÉ, non_trouve, manual, autousagee.ca, SANS_SITE
 Usage: python3 revalidate.py [--limit N] [--start N]
 """
 
@@ -22,7 +22,7 @@ HEADERS = {
     "Accept-Language": "fr-CA,fr;q=0.9,en;q=0.8",
 }
 
-KEEP_SOURCES = {"FERMÉ", "non_trouve", "manual", "autousagee.ca", ""}
+KEEP_SOURCES = {"FERMÉ", "non_trouve", "manual", "autousagee.ca", "SANS_SITE", ""}
 
 
 def base_url(url):

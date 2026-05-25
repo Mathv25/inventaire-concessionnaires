@@ -157,7 +157,7 @@ def load_not_found(output_csv):
     with open(output_csv, encoding="utf-8") as f:
         return {norm(r["Concessionnaire"]) for r in csv.DictReader(f)
                 if r.get("Inventaire_Scraped", "").strip() in ("", "0")
-                and r.get("Source","") not in ("FERMÉ","ferme")}
+                and r.get("Source","") not in ("FERMÉ","ferme","SANS_SITE")}
 
 def remove_rows(output_csv, names_norm):
     if not os.path.exists(output_csv): return 0
