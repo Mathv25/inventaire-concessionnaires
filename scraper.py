@@ -185,6 +185,9 @@ def extract_count(text, require_used_context=False):
     Si require_used_context=True, n'accepte que les patterns qui mentionnent
     explicitement occasion/usagé/used/pre-owned.
     """
+    # Supprime les numéros de téléphone avant toute extraction (ex: 418-368-4542, 1-800-xxx-xxxx)
+    text = re.sub(r"\b1?[-.\s]?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b", "", text)
+
     # Patterns avec contexte usagé explicite — priorité maximale
     used_patterns = [
         r"(\d+)\s+v[ée]hicules?\s+d.occasion",        # "75 Véhicules d'occasion"
