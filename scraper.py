@@ -348,11 +348,18 @@ def count_vehicle_cards(html, used_only=False):
     for sel in selectors:
         try:
             cards = soup.select(sel)
-            n = len(cards)
+            if not cards:
+                continue
+            # Garde seulement les éléments racines (exclut les imbriqués)
+            # Un élément est imbriqué si l'un de ses ancêtres fait aussi partie de la sélection
+            cards_set = set(id(c) for c in cards)
+            roots = [c for c in cards
+                     if not any(id(a) in cards_set for a in c.parents)]
+            n = len(roots)
             if used_only and n > 0:
                 # Ne compter que les cartes qui mentionnent usagé/occasion/used
                 used_cards = [
-                    c for c in cards
+                    c for c in roots
                     if re.search(r"usag[ée]|occasion|pre.?owned|used", c.get_text(), re.I)
                     or re.search(r"usag[ée]|occasion|used", str(c.get("class","")) + str(c.get("data-condition","")), re.I)
                 ]
