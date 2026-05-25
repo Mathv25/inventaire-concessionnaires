@@ -34,6 +34,46 @@ def base_url(url):
         return url
 
 
+def _norm_word(w):
+    """Normalise un mot en minuscules ASCII sans accents."""
+    import unicodedata
+    w = unicodedata.normalize("NFD", w.lower())
+    w = "".join(c for c in w if unicodedata.category(c) != "Mn")
+    return re.sub(r"[^a-z0-9]", "", w)
+
+
+def domain_matches_dealer(url, dealer_name, city):
+    """
+    Retourne True si le domaine de l'URL contient au moins un mot du nom du dealer (hors ville).
+    Évite de revalider depuis un domaine qui n'a rien à voir avec le concessionnaire.
+    Ex: toyotagatineau.ca pour "K&K Cars" → False ("cars" absent du domaine).
+    Ex: gatineauhonda.com pour "Gatineau Honda" → True ("honda" présent).
+    """
+    try:
+        domain_raw = urlparse(url).netloc.lower()
+        # Retire www. et TLD (.ca, .com, etc.) pour avoir le nom de domaine brut
+        domain = re.sub(r"^www\.", "", domain_raw)
+        domain = re.sub(r"\.[a-z]{2,3}$", "", domain)  # retire .ca, .com, .net…
+    except Exception:
+        return True  # en cas d'erreur, on laisse passer
+
+    domain_flat = _norm_word(domain)
+
+    # Tokens du dealer et de la ville normalisés (>= 2 chars)
+    city_tokens = {_norm_word(w) for w in re.split(r"[\s\-]+", city) if len(w) >= 2}
+    dealer_tokens = [_norm_word(w) for w in re.split(r"[\s\-&]+", dealer_name) if len(w) >= 2]
+
+    # Tokens non-ville: ceux qui distinguent le dealer (peu importe s'ils sont "génériques")
+    non_city = [w for w in dealer_tokens if w not in city_tokens]
+
+    if not non_city:
+        # Nom entièrement composé de mots de ville (ex: "Gatineau Auto"): on accepte
+        return True
+
+    # Au moins un token non-ville doit apparaître dans le domaine
+    return any(w in domain_flat for w in non_city)
+
+
 def find_used_url_from_base(base):
     """
     Trouve la vraie URL de la page usagés à partir de la homepage.
@@ -144,6 +184,7 @@ def main():
 
     for i, row in enumerate(to_process, 1):
         name = row["Concessionnaire"]
+        city = row.get("Ville", "")
         old_count = row.get("Inventaire_Scraped", "")
         old_url = row.get("URL_trouvee", "")
         old_src = row.get("Source", "")
@@ -151,6 +192,17 @@ def main():
 
         print(f"\n[{i+start}/{len(to_process)+start}] {name[:45]}")
         print(f"  Avant: {old_count} ({old_src})")
+
+        # Validation: le domaine doit correspondre au nom du dealer
+        if not domain_matches_dealer(old_url, name, city):
+            print(f"  ✗ Domaine incohérent avec le dealer — URL ignorée: {base}")
+            row_index[name]["Inventaire_Scraped"] = "0"
+            row_index[name]["Source"] = "non_trouve"
+            row_index[name]["URL_trouvee"] = ""
+            row_index[name]["Date_Scrape"] = datetime.now().strftime("%Y-%m-%d")
+            row_index[name]["Notes"] = f"Domaine {base} incohérent avec le nom du dealer"
+            failed += 1
+            continue
 
         try:
             new_count, new_src, new_url = scrape_from_base(base, name)
