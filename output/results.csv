@@ -40,7 +40,7 @@ Complexe Kia Montreal,Pointe-aux-Trembles,Isabelle Ricard,Former Customer,0,http
 Taddeo Auto Centre Certifie,Laval,Isabelle Ricard,Former Customer,0,https://www.groupetaddeo.com/fr/inventaire-occasion,160,static,2026-05-22,
 Olivier Occasion Baie-Comeau,Baie-Comeau,Isabelle Ricard,Former Customer,0,https://www.olivierchryslerbaiecomeau.com/occasion/recherche.html,8,static_used,2026-05-22,
 Belvedere Nissan Mont-Laurier,Mont-Laurier,Isabelle Ricard,Former Customer,0,https://www.belvederenissan.com/fr/inventaire-nissan-st-jerome-used,26,static,2026-05-22,
-Auto Kent Inc.,Anjou,Isabelle Ricard,Former Customer,0,https://www.autokent.ca,100,static_used,2026-05-22,
+Auto Kent Inc.,Anjou,Isabelle Ricard,Former Customer,0,https://www.autokent.ca/cars/,52,static_used,2026-05-25,
 Gareau Toyota,Val-d'or,Isabelle Ricard,Prospect,0,https://www.valdortoyota.ca/occasion,59,static,2026-05-22,
 Ste-Therese Toyota,Sainte-therese,Isabelle Ricard,Prospect,0,https://www.stetheresetoyota.com/fr/inventaire-occasion,7,static_used,2026-05-22,
 Performe Hyundai,Mont-laurier,Isabelle Ricard,Prospect,0,https://www.groupeperformance.com/fr/inventaire-occasion,88,static_used,2026-05-22,
@@ -254,7 +254,7 @@ Volkswagen Brossard,Brossard,Maxime Beland,Former Customer,40,https://www.brossa
 Automobile Paquin Ltée,Saint-bruno-de-guigues,Isabelle Ricard,Prospect,12,https://www.paquinrecreatif.com/en/used,3,static/en/used,2026-05-22,
 Land Rover Jaguar de Québec,Québec,Maxime Beland,Prospect,11,https://www.landroverjaguar.com,,FERMÉ,2026-05-07,site_parque
 Sept-Îles Honda,Sept-Îles,Maxime Beland,Prospect,11,https://www.septileshonda.com/fr/inventaire-occasion/fr/inventaire-occasion,14,website_js,2026-05-22,
-Automobile Lambert,Laval,Isabelle Ricard,Prospect,0,https://www.automobile-lambert.com/fr/vehicules-usages,100,website_js,2026-05-22,
+Automobile Lambert,Laval,Isabelle Ricard,Prospect,0,https://www.automobile-lambert.com/fr/inventory,43,api_intercepted,2026-05-25,
 Garage Blainville Volvo,Blainville,Isabelle Ricard,Prospect,0,https://www.mercedes-benz-blainville.ca/fr/inventaire-occasion,87,cards,2026-05-22,
 Auto Credit National,Saint-Eustache,Isabelle Ricard,Former Customer,0,https://www.nationalcityautocenter.com/used-vehicles/Used+Alfa+Romeo+tm,44,website_js_cards,2026-05-07,
 Auto TL,Lachute,Isabelle Ricard,Former Customer,0,https://www.autotl.ca/nous-joindre/,,FERMÉ,2026-05-07,HTTP 404

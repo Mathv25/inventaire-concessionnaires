@@ -870,6 +870,7 @@ def scrape_playwright(url):
             intercepted_counts.sort(key=lambda x: x[0])
             api_count, best_api_url = intercepted_counts[0]
             print(f"    [API] Compte intercepté: {api_count} depuis {best_api_url[:80]}")
+            return api_count, "api_intercepted", final_url
 
         # ── Priorité 2: Regex sur le texte — contexte usagé explicite ────────────
         count = extract_count(page_text, require_used_context=True)
