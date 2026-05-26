@@ -48,7 +48,15 @@ def domain_matches_dealer(url, dealer_name, city):
     Évite de revalider depuis un domaine qui n'a rien à voir avec le concessionnaire.
     Ex: toyotagatineau.ca pour "K&K Cars" → False ("cars" absent du domaine).
     Ex: gatineauhonda.com pour "Gatineau Honda" → True ("honda" présent).
+    Ex: occasions.hyundai.fr pour "Hyundai du Royaume" → False (TLD étranger .fr)
     """
+    # TLDs étrangers inacceptables pour un dealer québécois
+    FOREIGN_TLDS = {'.fr', '.be', '.ch', '.de', '.es', '.it', '.co.uk', '.com.au',
+                    '.co.nz', '.mx', '.br', '.ar', '.jp', '.cn', '.ru', '.au'}
+    url_lower = url.lower()
+    if any(url_lower.split('/')[2].endswith(tld) for tld in FOREIGN_TLDS):
+        return False
+
     try:
         domain_raw = urlparse(url).netloc.lower()
         # Retire www. et TLD (.ca, .com, etc.) pour avoir le nom de domaine brut
