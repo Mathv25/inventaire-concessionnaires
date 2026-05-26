@@ -187,6 +187,8 @@ def extract_count(text, require_used_context=False):
     """
     # Supprime les numéros de téléphone avant toute extraction (ex: 418-368-4542, 1-800-xxx-xxxx)
     text = re.sub(r"\b1?[-.\s]?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b", "", text)
+    # Supprime les affirmations marketing approximatives ("plus de 75 véhicules", "over 100 cars")
+    text = re.sub(r"\b(?:plus\s+d[e']|more\s+than|over|environ|approximately|près\s+de|upward\s+of)\s+\d+", "", text, flags=re.I)
 
     # Patterns avec contexte usagé explicite — priorité maximale
     used_patterns = [
