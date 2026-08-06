@@ -9,7 +9,8 @@ Scraper d'inventaire de véhicules d'occasion - Concessionnaires QC v4
 - Fallback autousagee.ca
 
 Usage:
-  python scraper.py <input.csv> <output.csv>          # run complet
+  python scraper.py <input.csv> <output.csv>          # run (reprend, scrape ce qui manque)
+  python scraper.py <input.csv> <output.csv> full     # re-scrape complet (rafraîchit tout)
   python scraper.py <input.csv> <output.csv> retry    # relance non-trouvés seulement
   python scraper.py <input.csv> <output.csv> test 5   # 5 premiers seulement
 
@@ -1126,11 +1127,18 @@ def main():
 
     retry_mode = mode == "retry"
     test_mode  = mode == "test"
+    full_mode  = mode == "full"
 
     # Créer le dossier de sortie si nécessaire
     out_dir = os.path.dirname(output_csv)
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
+
+    # MODE FULL: re-scrape complet. On efface le fichier LOCAL (sur le runner)
+    # pour que tous les dealers repassent en "à faire". Le fichier sur main
+    # reste intact jusqu'au commit final → pas de dashboard vide pendant le run.
+    if full_mode and os.path.exists(output_csv):
+        os.remove(output_csv)
 
     print("=" * 65)
     print("SCRAPER INVENTAIRE CONCESSIONNAIRES QC v4")
@@ -1138,6 +1146,7 @@ def main():
     print(f"Output: {output_csv}")
     if test_mode:  print(f"MODE TEST — {n_test} premiers dealers")
     if retry_mode: print("MODE RETRY — relance uniquement les non-trouvés")
+    if full_mode:  print("MODE FULL — re-scrape complet (inventaires rafraîchis)")
     print("=" * 65)
 
     with open(input_csv, encoding="utf-8") as f:
