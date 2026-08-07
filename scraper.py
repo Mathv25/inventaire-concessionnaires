@@ -1134,11 +1134,14 @@ def main():
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
 
-    # MODE FULL: re-scrape complet. On efface le fichier LOCAL (sur le runner)
-    # pour que tous les dealers repassent en "à faire". Le fichier sur main
-    # reste intact jusqu'au commit final → pas de dashboard vide pendant le run.
-    if full_mode and os.path.exists(output_csv):
-        os.remove(output_csv)
+    # MODE FULL: re-scrape complet, résumable et SANS régression du dashboard.
+    # On scrape dans un fichier scratch (results.csv.refresh); le results.csv live
+    # (lu par le dashboard) reste intact et n'est remplacé qu'une fois les 553
+    # traités. Si le run est coupé (timeout/annulation), le scratch committé permet
+    # de reprendre au run suivant, et le dashboard garde les données précédentes.
+    live_output = output_csv
+    if full_mode:
+        output_csv = output_csv + ".refresh"
 
     print("=" * 65)
     print("SCRAPER INVENTAIRE CONCESSIONNAIRES QC v4")
@@ -1191,6 +1194,12 @@ def main():
                 "Date_Scrape": datetime.now().strftime("%Y-%m-%d"),
                 "Notes": str(e)[:100],
             })
+
+    # MODE FULL terminé sans interruption → basculer le scratch vers le fichier live
+    if full_mode and os.path.exists(output_csv):
+        os.replace(output_csv, live_output)
+        print(f"MODE FULL terminé — {live_output} rafraîchi ({len(dealers)} dealers)")
+        output_csv = live_output
 
     print()
     print("=" * 65)

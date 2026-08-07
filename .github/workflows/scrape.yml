@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Mode (run / retry)'
+        description: 'Mode (run / full / retry)'
         required: false
         default: 'run'
 
@@ -14,7 +14,7 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 350   # 553 dealers ~5h au rythme DDG actuel (limite runner public: 6h)
 
     steps:
       - uses: actions/checkout@v4
@@ -55,10 +55,11 @@ jobs:
           fi
 
       - name: Commit résultats
+        if: always()   # sauvegarde la progression même sur timeout/annulation (reprise via 'run')
         run: |
           git config --global user.name "Scraper Bot"
           git config --global user.email "bot@inventaire.local"
-          git add output/results.csv
+          git add output/
           git diff --staged --quiet || git commit -m "Résultats scrape $(date +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase -X theirs origin main || true
           git push || true
