@@ -180,6 +180,56 @@ def save_row(output_csv, row):
 
 # ── Extraction du nombre de véhicules d'occasion ──────────────────────────────
 
+_DETAIL_URL_PATTERNS = [
+    # /vehicule-usage/cadillac-escalade-2026/5146999/  (plateforme très répandue au QC)
+    re.compile(r"/(?:vehicule|vehicle|voiture)[-_]?(?:usage|used|occasion)?s?/"
+               r"[a-z0-9][a-z0-9-]*-(?:19|20)\d{2}/\d+/?$", re.I),
+    # /inventaire/occasion/2017/hyundai/elantra/10835
+    re.compile(r"/(?:19|20)\d{2}/[a-z-]+/[a-z0-9-]+/\d{3,}/?$", re.I),
+    # tout chemin qui finit par un identifiant numérique long
+    re.compile(r"/\d{5,}/?$"),
+    # .../used/2021-honda-civic-id123456.html
+    re.compile(r"[-/](?:19|20)\d{2}[-_][a-z]+[-_][a-z0-9-]+[-_]?id[-_]?\d+", re.I),
+]
+
+
+def is_vehicle_detail_url(url):
+    """
+    Détecte une FICHE de véhicule (une seule auto) plutôt qu'une page
+    d'inventaire.
+
+    Pourquoi c'est critique: `_used_url_kw` accepte toute URL contenant
+    « usag », ce qui inclut /vehicule-usage/cadillac-escalade-2026/5146999/.
+    Le scraper se croyait alors sur une page d'inventaire et appliquait ses
+    regex génériques au texte d'une fiche unique. Résultat mesuré le
+    2026-08-07: Richard Auto 246 véhicules au lieu de 42, Paul Gamelin 172 au
+    lieu de 7, Mathews Bardier 79 au lieu de 8.
+    """
+    if not url:
+        return False
+    try:
+        path = urlparse(url).path or ""
+    except Exception:
+        path = url
+    return any(p.search(path) for p in _DETAIL_URL_PATTERNS)
+
+
+def inventory_url_candidates(url):
+    """
+    Depuis une fiche de véhicule, propose les pages d'inventaire probables du
+    même domaine (la racine de listing de la plateforme).
+    """
+    try:
+        u = urlparse(url)
+        base = f"{u.scheme}://{u.netloc}"
+    except Exception:
+        return []
+    return [base + p for p in (
+        "/inventaire/", "/inventaire", "/vehicules-usages/", "/vehicules-occasion/",
+        "/inventaire/occasion/", "/occasion/", "/inventory/", "/used/",
+    )]
+
+
 def extract_count(text, require_used_context=False):
     """
     Extrait le nombre de véhicules d'occasion du texte.
@@ -216,6 +266,11 @@ def extract_count(text, require_used_context=False):
         r"[Ff]ound\s+(\d+)\s+[Vv]ehicles?",
         r"(\d+)\s+v[ée]hicules?\s+(?:disponibles?|correspondants?|trouv[ée]s?|en\s+inventaire)",
         r"(\d+)\s+r[ée]sultats?(?:\s+trouv[ée]s?)?",
+        # "Toutes les marques (42)" — compteur du filtre marque sur la
+        # plateforme /inventaire/ (vérifié fiable: Gamelin 7 = CRM 7,
+        # Richard Auto 42 vs CRM 45, Mathews Bardier 8).
+        r"toutes\s+les\s+marques\s*\((\d+)\)",
+        r"all\s+makes\s*\((\d+)\)",
         r"(?:of|de)\s+(\d+)\s+(?:vehicle|v[ée]hicule|result|r[ée]sultat)",
         r"inventaire\s*:?\s*(\d+)",
         r"(\d+)\s+annonces?",
@@ -833,6 +888,34 @@ def scrape_playwright(url):
             _used_url_kw = re.compile(
                 r"occasion|usag[ée]|pre.?owned|used|inventaire|inventory", re.I
             )
+            # Si on a atterri sur une FICHE de véhicule, remonter vers la page
+            # d'inventaire du même domaine avant de compter quoi que ce soit.
+            if is_vehicle_detail_url(final_url):
+                print(f"    [Fiche] {final_url[:70]} → remonte vers l'inventaire")
+                for cand in inventory_url_candidates(final_url):
+                    try:
+                        intercepted_counts.clear()
+                        resp = page.goto(cand, wait_until="domcontentloaded",
+                                         timeout=20000)
+                        if not (resp and resp.status < 400):
+                            continue
+                        if is_vehicle_detail_url(page.url):
+                            continue
+                        # Ces pages d'inventaire peuplent la liste en JS: sans
+                        # attendre le réseau, le compteur « Toutes les marques
+                        # (N) » n'est pas encore dans le DOM et on repartait
+                        # les mains vides.
+                        try:
+                            page.wait_for_load_state("networkidle", timeout=15000)
+                        except Exception:
+                            pass
+                        time.sleep(3.0)
+                        final_url = page.url
+                        print(f"    [Fiche] inventaire trouvé: {final_url[:70]}")
+                        break
+                    except Exception:
+                        continue
+
             if not _used_url_kw.search(final_url):
                 for selector in [
                     'a:text-matches("usag", "i")',
@@ -871,8 +954,15 @@ def scrape_playwright(url):
             page_html = page.content()
             browser.close()
 
-        on_used_page = bool(_used_url_kw.search(final_url))
+        # Une fiche de véhicule n'est PAS une page d'inventaire, même si son URL
+        # contient « usag ». Sans cette exclusion, les regex génériques
+        # ramassaient un nombre quelconque du texte de la fiche.
+        on_detail = is_vehicle_detail_url(final_url)
+        on_used_page = bool(_used_url_kw.search(final_url)) and not on_detail
         content_score = _verify_used_page_content(page_text, page_html)
+        if on_detail:
+            print(f"    ⚠ Encore sur une fiche véhicule — comptage refusé")
+            return None, "detail_page_only", final_url
 
         # ── Priorité 1: Réponses API interceptées (si page usagés) ───────────────
         api_count = None
