@@ -1179,6 +1179,7 @@ def process(dealer, output_csv):
             # Sanity check — aucun dealer solo QC n'a plus de 300 usagés
             if count > 300:
                 print(f"    ⚠ {count} rejeté (trop élevé — probablement faux positif)")
+                row["Notes"] = f"rejete_>300:{count}@{page_url}"
                 count = None
             else:
                 print(f"    ✓ {count} véhicules ({src}) → {page_url}")
@@ -1187,7 +1188,7 @@ def process(dealer, output_csv):
                 row["URL_trouvee"] = page_url
                 return row
 
-        row["Notes"] = f"site:{src}"
+        row["Notes"] = (row["Notes"] + " " if row["Notes"] else "") + f"site:{src}"
     else:
         row["Notes"] = "url_introuvable"
 
